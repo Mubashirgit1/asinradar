@@ -51,3 +51,12 @@ Whether you're an experienced seller or just starting out, ASIN RADAR helps you 
   * [Acknowledgments](#acknowledgments)
 
 ---
+### Colour Scheme
+
+Here is the color scheme for the project:
+
+--prussian-blue: #003049ff;
+--fire-engine-red: #d62828ff;
+--orange-wheel: #f77f00ff;
+--xanthous: #fcbf49ff;
+--vanilla: #eae2b7ff;
