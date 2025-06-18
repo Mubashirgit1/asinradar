@@ -59,6 +59,7 @@ Here is the color scheme for the project:
 - **Orange Wheel**: `#f77f00ff`
 - **Xanthous**: `#fcbf49ff`
 - **Vanilla**: `#eae2b7ff`
-- 
+
+![ASINRADAR](assets/color-scheme/Asin%20Radar%20Color%20Scheme.png)
 Resource
 https://coolors.co/user/palettes/6852bea9b6b194000bfbd483
