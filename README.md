@@ -54,9 +54,11 @@ Whether you're an experienced seller or just starting out, ASIN RADAR helps you 
 ### Colour Scheme
 
 Here is the color scheme for the project:
-
---prussian-blue: #003049ff;
---fire-engine-red: #d62828ff;
---orange-wheel: #f77f00ff;
---xanthous: #fcbf49ff;
---vanilla: #eae2b7ff;
+- **Prussian Blue**: `#003049ff`
+- **Fire Engine Red**: `#d62828ff`
+- **Orange Wheel**: `#f77f00ff`
+- **Xanthous**: `#fcbf49ff`
+- **Vanilla**: `#eae2b7ff`
+- 
+Resource
+https://coolors.co/user/palettes/6852bea9b6b194000bfbd483
