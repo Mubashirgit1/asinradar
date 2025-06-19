@@ -63,3 +63,11 @@ Here is the color scheme for the project:
 ![ASINRADAR](assets/color-scheme/Asin%20Radar%20Color%20Scheme.png)
 Resource
 https://coolors.co/user/palettes/6852bea9b6b194000bfbd483
+
+
+### **Wireframes**
+
+Wireframes for the website were created using **Figma**.
+Click to view the **website wireframes** [here](https://www.figma.com/design/4mJYRwrJnmsoifzWiK1tJQ/ASIN-RADAR?node-id=0-1&m=dev&t=gptwWji70jXKvfB0-1).
+
+
