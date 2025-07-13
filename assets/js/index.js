@@ -12,7 +12,5 @@ $(document).ready(function () {
     } else {
       navbar.classList.remove('navbar-dark-mode');
     }
-
-      console.log('Active slide index:', activeIndex);
     });
   });
