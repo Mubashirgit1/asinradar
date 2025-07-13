@@ -1,0 +1,84 @@
+
+
+/* color scheme  */
+.blue-color     {
+    background: #003049;
+}
+.red-color{
+background: #d62828 !important;
+
+}
+.orange-color {
+    background: #f77f00;
+}
+.yellow-color {
+    background: #fcbf49;
+   
+}
+.camel-color {
+    background: #eae2b7;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #eae2b7, #fcbf49, #f77f00, #d62828, #003049);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Nav */
+.nav-padding {
+    padding-left: 0px !important ;
+    padding-right: 0px !important ;
+}
+.custom-nav{
+    z-index: 10 !important;
+    position: absolute !important;
+}
+/* Crousel */
+.heading-box h2{ width:100%; color: red; }
+.text-box {
+	position: absolute;
+	top: 85%;
+	left: 15%;
+	right: 15%;
+	color: #fff;
+	text-align: center;
+	transform: translateY(-50%);
+}
+    .navbar {
+      position: absolute;
+      width: 70%;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+      color: #fff;
+    }
+
+.btn-outline-success {
+  color: #fff;
+  border-color: #fff;
+}
+
+.navbar-dark-mode .navbar-brand,
+.navbar-dark-mode .nav-link,
+.navbar-dark-mode .nav-link:hover,
+.navbar-dark-mode .btn-outline-success
+{
+  color: #003049 !important; /* dark text on light slides (like your last one) */
+  border-color: #003049;
+}
