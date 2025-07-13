@@ -1,95 +1,304 @@
-
-
 /* color scheme  */
-.blue-color     {
+.blue-color {
     background: #003049;
 }
-.red-color{
-background: #d62828 !important;
+
+.red-color {
+    background: #d62828 !important;
 
 }
+
 .orange-color {
     background: #f77f00;
 }
+
 .yellow-color {
     background: #fcbf49;
-   
+
 }
+
 .camel-color {
     background: #eae2b7;
 }
 
- 
+
 
 /* Nav */
 .nav-padding {
-    padding-left: 0px !important ;
-    padding-right: 0px !important ;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }
-.custom-nav{
-    z-index: 10 !important;
-    position: absolute !important;
-}
-/* Crousel */
-.heading-box h2{ width:100%; color: red; }
-.text-box {
-	position: absolute;
-	top: 85%;
-	left: 15%;
-	right: 15%;
-	color: #fff;
-	text-align: center;
-	transform: translateY(-50%);
-}
-    .navbar {
-      position: absolute;
-      width: 70%;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 10;
-      color: #fff;
-    }
+
+.custom-nav {}
 
 .btn-outline-success {
-  color: #fff;
-  border-color: #fff;
+    color: #fff;
+    border-color: #fff;
 }
 
 .navbar-dark-mode .navbar-brand,
 .navbar-dark-mode .nav-link,
 .navbar-dark-mode .nav-link:hover,
-.navbar-dark-mode .btn-outline-success
-{
-  color: #003049 !important; /* dark text on light slides (like your last one) */
-  border-color: #003049;
+.navbar-dark-mode .btn-outline-success {
+    color: #003049 !important;
+    /* dark text on light slides (like your last one) */
+    border-color: #003049;
 }
+
+
+/* Crousel */
+.heading-box h2 {
+    width: 100%;
+    color: red;
+}
+
+.text-box {
+    position: absolute;
+    top: 85%;
+    left: 15%;
+    right: 15%;
+    color: #fff;
+    text-align: center;
+    transform: translateY(-50%);
+}
+
+.navbar-home {
+    position: absolute;
+    width: 70%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    color: #fff;
+    z-index: 10 !important;
+    position: absolute !important;
+}
+
 
 
 
 /* Feature */
-.how-section1{
-    margin-top:-15%;
+.how-section1 {
+    margin-top: -15%;
     padding: 10%;
 }
-.how-section1 h4{
+
+.how-section1 h4 {
     color: #ffa500;
     font-weight: bold;
     font-size: 30px;
 }
-.how-section1 .subheading{
+
+.how-section1 .subheading {
     color: #3931af;
     font-size: 20px;
 }
-.how-section1 .row
-{
+
+.how-section1 .row {
     margin-top: 10%;
 }
-.how-img 
-{
+
+.how-img {
     text-align: center;
 }
-.how-img img{
+
+.how-img img {
     width: 40%;
 }
+
+/* footer */
+footer h6 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+footer h6:after {
+    position: absolute;
+    content: "";
+    background: #003049;
+    width: 12%;
+    height: 1px;
+    left: 0;
+    bottom: -20px;
+}
+
+.btn-footer {
+    color: #003049;
+
+    text-decoration: none;
+    border: 1px solid;
+    border-radius: 43px;
+    font-size: 13px;
+    padding: 7px 30px;
+    line-height: 47px;
+}
+
+.btn-footer:hover {
+
+    text-decoration: none;
+
+}
+
+.form-footer input[type="text"] {
+    border: none;
+    border-radius: 16px 0 0 16px;
+    outline: none;
+    padding-left: 10px;
+
+}
+
+.form-footer input[type="button"] {
+    border: none;
+    background: #232323;
+    margin-left: -5px;
+    color: #fff;
+    outline: none;
+    border-radius: 0 16px 16px 0;
+    padding: 2px 12px;
+}
+
+.social .fab {
+    color: #d62828;
+    font-size: 22px;
+    padding: 10px 15px;
+    background: #003049;
+}
+
+footer ul li {
+    list-style: none;
+    display: block;
+}
+
+footer ul {
+    padding-left: 0;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #003049;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #f5f5f5 !important;
+
+}
+
+.logo-part {
+    border-right: 1px solid #003049;
+    height: 100%;
+}
+
+.logo-footer {
+    color: #003049;
+}
+/* pricing */
+.db-bk-color-one {
+    background-color: #d62828;
+}
+  
+.db-bk-color-two {
+    background-color: #003049;
+}
+
+.db-bk-color-three {
+    background-color: #fcbf49;
+}
+
+ 
+/*============================================================
+PRICING STYLES
+==========================================================*/
+.db-padding-btm {
+    padding-bottom: 50px;
+}
+.db-button-color-square {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.50);
+    border: none;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+}
+
+    .db-button-color-square:hover {
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.50);
+        border: none;
+    }
+
+
+.db-pricing-eleven {
+    margin-bottom: 30px;
+    margin-top: 50px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    color: #fff;
+    line-height: 30px;
+}
+
+    .db-pricing-eleven ul {
+        list-style: none;
+        margin: 0;
+        text-align: center;
+        padding-left: 0px;
+    }
+
+        .db-pricing-eleven ul li {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            cursor: pointer;
+        }
+
+            .db-pricing-eleven ul li i {
+                margin-right: 5px;
+            }
+
+
+    .db-pricing-eleven .price {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 40px 20px 20px 20px;
+        font-size: 60px;
+        font-weight: 900;
+        color: #FFFFFF;
+    }
+
+        .db-pricing-eleven .price small {
+            color: #B8B8B8;
+            display: block;
+            font-size: 12px;
+            margin-top: 22px;
+        }
+
+    .db-pricing-eleven .type {
+        background-color: #f77f00;
+        padding: 50px 20px;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 30px;
+    }
+
+    .db-pricing-eleven .pricing-footer {
+        padding: 20px;
+    }
+
+.db-attached > .col-lg-4,
+.db-attached > .col-lg-3,
+.db-attached > .col-md-4,
+.db-attached > .col-md-3,
+.db-attached > .col-sm-4,
+.db-attached > .col-sm-3 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.db-pricing-eleven.popular {
+    margin-top: 10px;
+}
+
+    .db-pricing-eleven.popular .price {
+        padding-top: 80px;
+    }
