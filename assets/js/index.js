@@ -14,6 +14,9 @@ $(document).ready(function () {
   var resultArea = $("#results");
   var searchBar = $("#searchBar");
   var searchButton = $(".fa-search");
+    const inputElement = document.getElementById("myInput");
+  // Get its value
+  const inputValue = inputElement.value;
   // var searchUrl = "https://api.keepa.com/product?key=&domain=3&asin=B07N4M94WP";
    var displayResults = function(){
    $.ajax({
@@ -26,11 +29,49 @@ $(document).ready(function () {
   method: "GET",
   success: function (response) {
     console.log(response);
+    handleKeepaResponse(response);
+    
   },
   error: function (xhr, status, error) {
     console.error("Error:", status, error);
   }
 });
+
+function handleKeepaResponse(data) {
+  if (data.products && data.products.length > 0) {
+    const product = data.products[0];
+    const asin = product.asin;
+    const title = product.title;
+    var imageUrl  = getProductImage(product);
+    console.log(imageUrl);
+    const img = document.createElement('img');
+    img.src = imageUrl;
+    img.alt = product.title;
+    img.style.width = '300px'; // Optional: set image size
+
+    // Append image to container div
+    document.getElementById('imageContainer').appendChild(img);
+
+    console.log(`ASIN: ${asin}`);
+    console.log(`Title: ${title}`);
+    console.log(`Current Price: $${currentPrice}`);
+  } else {
+    console.log('No product data found.');
+  }
+}
+function getProductImage(product) {
+  if (product.imagesCSV) {
+    const imageNames = product.imagesCSV.split(',');
+    // Get the first image name
+    const firstImageName = imageNames[0];
+    // Build the image URL
+    return `https://images-na.ssl-images-amazon.com/images/I/${firstImageName}.jpg`;
+  } else {
+    // Fallback to ASIN-based image URL
+    return `https://images-na.ssl-images-amazon.com/images/P/${product.asin}.jpg`;
+  }
+}
+
     // $.ajax({
     //   url: searchUrl,
     //   dataType: 'jsonp',
