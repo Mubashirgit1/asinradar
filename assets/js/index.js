@@ -30,7 +30,9 @@ $(document).ready(function () {
       .join('');
   }
 
-
+let isSearching = false;
+  if (isSearching) return; // prevent double calls
+  isSearching = true;
   async function handleSearch() {
     const asin = $('#asinInput').val().trim();
     if (!asin) {
