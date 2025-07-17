@@ -74,50 +74,38 @@ let isSearching = false;
   });
 
   function handleKeepaResponse(data) {
-      if (data.asin && data.asin.length > 0) {
-        const product = data.image;
-        const asin = data.asin;
+      if (data.asin) {
         const title = data.title;
-        var imageUrl = getProductImage(product);
+        var imageUrl = getProductImage(data);
         const img = document.createElement('img');
         img.src = imageUrl;
-        img.alt = product.title;
+        img.alt = title;
         img.style.width = '300px'; // Optional: set image size
         // Append image to container div
+        console.log(img);
+        $("#searchBox").animate({'padding-top':"0"}, 600);
+        $(".container-animate").animate({height:"30vh"}, 600);
+        $("footer").append("<p>----x--------x----</p>");
+
         document.getElementById('imageContainer').appendChild(img);
  
       } else {
         console.log('No product data found.');
       }
-      $("footer").append("<p>----x--------x----</p>");
+    
     }
-    function getProductImage(product) {
-      if (product.imagesCSV) {
-        const imageNames = product.imagesCSV.split(',');
-        // Get the first image name
-        const firstImageName = imageNames[0];
-        // Build the image URL
-        return `https://images-na.ssl-images-amazon.com/images/I/${firstImageName}.jpg`;
+    function getProductImage(data) {
+      if (data.image) {
+          return data.image;
       } else {
         // Fallback to ASIN-based image URL
-        return `https://images-na.ssl-images-amazon.com/images/P/${product.asin}.jpg`;
+        return `https://images-na.ssl-images-amazon.com/images/P/${data.asin}.jpg`;
       }
     }
 
  
-  // searchButton.click(function(){
+ 
 
-  //   keyword = searchBar.val();
-  //   resultArea.empty();
-  //   $("footer").empty();
-  //   displayResults(); 
-  //   $("#searchBox").animate({'padding-top':"0"}, 600);
-  //   $(".container-animate").animate({height:"30vh"}, 600);
-  // });
-
-  // searchBar.keypress(function(e){
-  //     if(e.keyCode==13)
-  //     $(searchButton).click();
-  // });
+ 
 
 });
