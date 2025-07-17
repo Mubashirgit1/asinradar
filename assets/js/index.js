@@ -51,6 +51,8 @@ let isSearching = false;
       },
       success: function (data) {
         $('#result').text(JSON.stringify(data, null, 2));
+        handleKeepaResponse(data);
+
       },
       error: function (xhr, status, err) {
         $('#result').text('Error: ' + (xhr.responseText || err));
@@ -69,19 +71,12 @@ let isSearching = false;
     }
   });
 
-
-
-
-  var displayResults = function () {
-
-
-    function handleKeepaResponse(data) {
+  function handleKeepaResponse(data) {
       if (data.products && data.products.length > 0) {
         const product = data.products[0];
         const asin = product.asin;
         const title = product.title;
         var imageUrl = getProductImage(product);
-        console.log(imageUrl);
         const img = document.createElement('img');
         img.src = imageUrl;
         img.alt = product.title;
@@ -89,13 +84,11 @@ let isSearching = false;
 
         // Append image to container div
         document.getElementById('imageContainer').appendChild(img);
-
-        console.log(`ASIN: ${asin}`);
-        console.log(`Title: ${title}`);
-        console.log(`Current Price: $${currentPrice}`);
+ 
       } else {
         console.log('No product data found.');
       }
+      $("footer").append("<p>----x--------x----</p>");
     }
     function getProductImage(product) {
       if (product.imagesCSV) {
@@ -110,9 +103,7 @@ let isSearching = false;
       }
     }
 
-
-    $("footer").append("<p>----x--------x----</p>");
-  };
+ 
   // searchButton.click(function(){
 
   //   keyword = searchBar.val();
