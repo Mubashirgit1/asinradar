@@ -80,6 +80,7 @@ $(document).ready(function () {
       const pattern = data.pattern;
       const eanList = data.eanList;
       const m_sold = data.monthlySold;
+      const description = data.description;
       var imageUrl = getProductImage(data);
 
       const img = document.createElement('img');
@@ -96,6 +97,7 @@ $(document).ready(function () {
        document.getElementById("pattern").textContent = pattern;
        document.getElementById("eanList").textContent = eanList;
        document.getElementById("m_sold").textContent = m_sold;
+       document.getElementById("description").textContent = description;
        
 
     } else {
