@@ -11,24 +11,24 @@ $(document).ready(function () {
   });
 
 
-  // const sharedSecret = 'a9f1c2e741f1cd9e27f839a98fcb82715e4f30c961b879a69f2e13e3a4a6d84b'; // same secret as backend
-  // async function generateHMACSignature(secret, timestamp) {
-  //   const encoder = new TextEncoder();
-  //   const keyData = encoder.encode(secret);
-  //   const message = encoder.encode(timestamp.toString());
+  const sharedSecret = 'a9f1c2e741f1cd9e27f839a98fcb82715e4f30c961b879a69f2e13e3a4a6d84b'; // same secret as backend
+  async function generateHMACSignature(secret, timestamp) {
+    const encoder = new TextEncoder();
+    const keyData = encoder.encode(secret);
+    const message = encoder.encode(timestamp.toString());
 
-  //   const key = await crypto.subtle.importKey(
-  //     'raw',
-  //     keyData,
-  //     { name: 'HMAC', hash: 'SHA-256' },
-  //     false,
-  //     ['sign']
-  //   );
-  //   const sigBuffer = await crypto.subtle.sign('HMAC', key, message);
-  //   return Array.from(new Uint8Array(sigBuffer))
-  //     .map(b => b.toString(16).padStart(2, '0'))
-  //     .join('');
-  // }
+    const key = await crypto.subtle.importKey(
+      'raw',
+      keyData,
+      { name: 'HMAC', hash: 'SHA-256' },
+      false,
+      ['sign']
+    );
+    const sigBuffer = await crypto.subtle.sign('HMAC', key, message);
+    return Array.from(new Uint8Array(sigBuffer))
+      .map(b => b.toString(16).padStart(2, '0'))
+      .join('');
+  }
 
 let isSearching = false;
 
@@ -42,15 +42,15 @@ let isSearching = false;
       return;
     }
 
-    // const timestamp = Date.now();
-    // const signature = await generateHMACSignature(sharedSecret, timestamp);
+    const timestamp = Date.now();
+    const signature = await generateHMACSignature(sharedSecret, timestamp);
     $.ajax({
       url: `https://liveprojects.online/asinradar/keepa.php?asin=${asin}`,
       method: 'GET',
-      // headers: {
-      //   'X-TIMESTAMP': timestamp.toString(),
-      //   'X-SIGNATURE': signature
-      // },
+      headers: {
+        'X-TIMESTAMP': timestamp.toString(),
+        'X-SIGNATURE': signature
+      },
       success: function (data) {
         $('#result').text(JSON.stringify(data, null, 2));
         handleKeepaResponse(data);
