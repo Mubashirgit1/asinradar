@@ -76,13 +76,7 @@ $(document).ready(function () {
   function handleKeepaResponse(data) {
     if (data.asin) {
       const title = data.title;
-      const brand = data.brand;
-      const pattern = data.pattern;
-      const eanList = data.eanList;
-      const m_sold = data.monthlySold;
-      const description = data.description;
       var imageUrl = getProductImage(data);
-
       const img = document.createElement('img');
       img.src = imageUrl;
       img.alt = title;
@@ -93,13 +87,14 @@ $(document).ready(function () {
       document.getElementById('imageContainer').appendChild(img);
       // Append Title to container div
        document.getElementById("title").textContent = title;
-       document.getElementById("brand").textContent = brand;
-       document.getElementById("pattern").textContent = pattern;
-       document.getElementById("eanList").textContent = eanList;
-       document.getElementById("m_sold").textContent = m_sold;
-       document.getElementById("description").textContent = description;
+       document.getElementById("brand").textContent = data.brand;
+       document.getElementById("pattern").textContent = data.pattern;
+       document.getElementById("eanList").textContent = data.eanList;
+       document.getElementById("category").textContent = data.category;
+       document.getElementById("m_sold").textContent = data.monthlySold;
+       document.getElementById("description").textContent = data.description;
+       document.getElementById("fba_fee").textContent = data.fba_fee;
        
-
     } else {
       console.log('No product data found.');
     }
