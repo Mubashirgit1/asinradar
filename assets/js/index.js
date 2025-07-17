@@ -48,10 +48,10 @@ $(document).ready(function () {
       $.ajax({
         url: `https://liveprojects.online/asinradar/keepa.php?asin=${asin}`,
         method: 'GET',
-        headers: {
-          'X-TIMESTAMP': timestamp.toString(),
-          'X-SIGNATURE': signature
-        },
+        // headers: {
+        //   'X-TIMESTAMP': timestamp.toString(),
+        //   'X-SIGNATURE': signature
+        // },
         success: function (data) {
           $('#result').text(JSON.stringify(data, null, 2));
         },
