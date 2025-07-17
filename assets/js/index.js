@@ -79,6 +79,7 @@ $(document).ready(function () {
       const brand = data.brand;
       const pattern = data.pattern;
       const eanList = data.eanList;
+      const m_sold = data.monthlySold;
       var imageUrl = getProductImage(data);
 
       const img = document.createElement('img');
@@ -94,6 +95,7 @@ $(document).ready(function () {
        document.getElementById("brand").textContent = brand;
        document.getElementById("pattern").textContent = pattern;
        document.getElementById("eanList").textContent = eanList;
+       document.getElementById("m_sold").textContent = m_sold;
        
 
     } else {
