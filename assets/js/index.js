@@ -46,7 +46,7 @@ $(document).ready(function () {
       const signature = await generateHMACSignature(sharedSecret, timestamp);
 
       $.ajax({
-        url: `https://yourdomain.com/keepa.php?asin=${asin}`,
+        url: `https://liveprojects.online/asinradar/keepa.php?asin=${asin}`,
         method: 'GET',
         headers: {
           'X-TIMESTAMP': timestamp.toString(),
@@ -106,19 +106,19 @@ function getProductImage(product) {
     
      $("footer").append("<p>----x--------x----</p>");
   };
-  searchButton.click(function(){
+  // searchButton.click(function(){
 
-    keyword = searchBar.val();
-    resultArea.empty();
-    $("footer").empty();
-    displayResults(); 
-    $("#searchBox").animate({'padding-top':"0"}, 600);
-    $(".container-animate").animate({height:"30vh"}, 600);
-  });
+  //   keyword = searchBar.val();
+  //   resultArea.empty();
+  //   $("footer").empty();
+  //   displayResults(); 
+  //   $("#searchBox").animate({'padding-top':"0"}, 600);
+  //   $(".container-animate").animate({height:"30vh"}, 600);
+  // });
   
-  searchBar.keypress(function(e){
-      if(e.keyCode==13)
-      $(searchButton).click();
-  });
+  // searchBar.keypress(function(e){
+  //     if(e.keyCode==13)
+  //     $(searchButton).click();
+  // });
 
   });
