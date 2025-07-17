@@ -195,11 +195,12 @@ a:hover {
 .logo-footer {
     color: #003049;
 }
+
 /* pricing */
 .db-bk-color-one {
     background-color: #d62828;
 }
-  
+
 .db-bk-color-two {
     background-color: #003049;
 }
@@ -208,13 +209,14 @@ a:hover {
     background-color: #fcbf49;
 }
 
- 
+
 /*============================================================
 PRICING STYLES
 ==========================================================*/
 .db-padding-btm {
     padding-bottom: 50px;
 }
+
 .db-button-color-square {
     color: #fff;
     background-color: rgba(0, 0, 0, 0.50);
@@ -224,11 +226,11 @@ PRICING STYLES
     -moz-border-radius: 0px;
 }
 
-    .db-button-color-square:hover {
-        color: #fff;
-        background-color: rgba(0, 0, 0, 0.50);
-        border: none;
-    }
+.db-button-color-square:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.50);
+    border: none;
+}
 
 
 .db-pricing-eleven {
@@ -240,57 +242,57 @@ PRICING STYLES
     line-height: 30px;
 }
 
-    .db-pricing-eleven ul {
-        list-style: none;
-        margin: 0;
-        text-align: center;
-        padding-left: 0px;
-    }
+.db-pricing-eleven ul {
+    list-style: none;
+    margin: 0;
+    text-align: center;
+    padding-left: 0px;
+}
 
-        .db-pricing-eleven ul li {
-            padding-top: 20px;
-            padding-bottom: 20px;
-            cursor: pointer;
-        }
+.db-pricing-eleven ul li {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
 
-            .db-pricing-eleven ul li i {
-                margin-right: 5px;
-            }
+.db-pricing-eleven ul li i {
+    margin-right: 5px;
+}
 
 
-    .db-pricing-eleven .price {
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 40px 20px 20px 20px;
-        font-size: 60px;
-        font-weight: 900;
-        color: #FFFFFF;
-    }
+.db-pricing-eleven .price {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px 20px 20px 20px;
+    font-size: 60px;
+    font-weight: 900;
+    color: #FFFFFF;
+}
 
-        .db-pricing-eleven .price small {
-            color: #B8B8B8;
-            display: block;
-            font-size: 12px;
-            margin-top: 22px;
-        }
+.db-pricing-eleven .price small {
+    color: #B8B8B8;
+    display: block;
+    font-size: 12px;
+    margin-top: 22px;
+}
 
-    .db-pricing-eleven .type {
-        background-color: #f77f00;
-        padding: 50px 20px;
-        font-weight: 900;
-        text-transform: uppercase;
-        font-size: 30px;
-    }
+.db-pricing-eleven .type {
+    background-color: #f77f00;
+    padding: 50px 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 30px;
+}
 
-    .db-pricing-eleven .pricing-footer {
-        padding: 20px;
-    }
+.db-pricing-eleven .pricing-footer {
+    padding: 20px;
+}
 
-.db-attached > .col-lg-4,
-.db-attached > .col-lg-3,
-.db-attached > .col-md-4,
-.db-attached > .col-md-3,
-.db-attached > .col-sm-4,
-.db-attached > .col-sm-3 {
+.db-attached>.col-lg-4,
+.db-attached>.col-lg-3,
+.db-attached>.col-md-4,
+.db-attached>.col-md-3,
+.db-attached>.col-sm-4,
+.db-attached>.col-sm-3 {
     padding-left: 0;
     padding-right: 0;
 }
@@ -299,158 +301,296 @@ PRICING STYLES
     margin-top: 10px;
 }
 
-    .db-pricing-eleven.popular .price {
-        padding-top: 80px;
-    }
+.db-pricing-eleven.popular .price {
+    padding-top: 80px;
+}
 
 /* Search */
 
-   #searchBox a:hover, a:active{
-  text-decoration: none;
+#searchBox a:hover,
+a:active {
+    text-decoration: none;
 }
 
-#searchBox input[type="text"], select{ 
+#searchBox input[type="text"],
+select {
     outline: none;
 }
 
-#searchBox .col-xs-1{
-  padding:0;
+#asinInput {
+    width: 200px;
 }
 
-#searchBox h1{
-  font-family: 'Arvo', sans-serif;
-  color:#E35865;
+#searchBox .col-xs-1 {
+    padding: 0;
 }
 
-#searchBox header.container-fluid{
-  margin: 0;
-  background-color: #39404A;
-  box-shadow: 0 0px 3px 3px rgba(0,0,0,.4);
-  height: 100vh;
-  min-height: 150px;
+#searchBox h1 {
+    font-family: 'Arvo', sans-serif;
+    color: #E35865;
 }
 
-#searchBox .container{
-  max-width: 720px;
-  margin: auto;
-  padding: 0 50px;
+#searchBox header.container-fluid {
+    margin: 0;
+    background-color: #39404A;
+    box-shadow: 0 0px 3px 3px rgba(0, 0, 0, .4);
+    height: 100vh;
+    min-height: 150px;
 }
 
-#searchBox ul{
-  padding: 0;
+#searchBox .container {
+    max-width: 720px;
+    margin: auto;
+    padding: 0 50px;
 }
 
-#searchBox li{
-  letter-spacing: 0;
-  padding: 30px;
-  list-style: none;
-  min-height: 200px;
-  background: #fff;
-  margin: 50px auto;
-  text-align: left;
-  -webkit-transition: box-shadow .2s ease-out .2s;
-  -moz-transition: box-shadow .2s ease-out .2s;
-  -o-transition: box-shadow .2s ease-out .2s;
-  transition: box-shadow .2s ease-out .2s;
-  word-spacing: 2px;
+#searchBox ul {
+    padding: 0;
 }
 
-#searchBox li > h3{
-  margin-top:0;
-  color: #E35865;
-  line-height: 2;
+#searchBox li {
+    letter-spacing: 0;
+    padding: 30px;
+    list-style: none;
+    min-height: 200px;
+    background: #fff;
+    margin: 50px auto;
+    text-align: left;
+    -webkit-transition: box-shadow .2s ease-out .2s;
+    -moz-transition: box-shadow .2s ease-out .2s;
+    -o-transition: box-shadow .2s ease-out .2s;
+    transition: box-shadow .2s ease-out .2s;
+    word-spacing: 2px;
 }
 
-#searchBox li > p{
-  color: #666;
-  line-height: 2;
+#searchBox li>h3 {
+    margin-top: 0;
+    color: #E35865;
+    line-height: 2;
 }
 
-#searchBox input{
-  padding:0;
-  border-radius: 0;
-  border: none;
-  font-size: 20px;
-  color: #bbb;
-  background:none;
-  letter-spacing: 1px;
-  word-spacing: 10px;
-  font-family: 'Arvo', sans-serif;
-  padding: 0;
-  line-height: 25px;
+#searchBox li>p {
+    color: #666;
+    line-height: 2;
 }
 
-#searchBox{
-  padding-top: 40vh;
+#searchBox input {
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    font-size: 20px;
+    color: #bbb;
+    background: none;
+    letter-spacing: 1px;
+    word-spacing: 10px;
+    font-family: 'Arvo', sans-serif;
+    padding: 0;
+    line-height: 25px;
 }
 
-#searchBox button{
-  background: none;
-  border: none;
+#searchBox {
+    padding-top: 40vh;
 }
 
-#searchBox .form{
-  padding: 10px 0;
-  padding-right: 15px;
-  border: 3px solid #E35865;
-  
+#searchBox button {
+    background: none;
+    border: none;
 }
 
-.form.col-xs-12{
-  padding-left: 0;
-}
-
-.fa{
-  color: #E35865;
-  font-size: 20px;
-  line-height: 25px;
-}
-
-.fa-search{
-  cursor: pointer;
+#searchBox .form {
+    padding: 10px 0;
+    padding-right: 15px;
+    border: 3px solid #E35865;
 
 }
 
-.glyphicon-search:hover{
+.form.col-xs-12 {
+    padding-left: 0;
+}
+
+.fa {
+    color: #E35865;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.fa-search {
+    cursor: pointer;
 
 }
 
-.bar{
-  vertical-align: super;
-  font-weight: 700;
-  font-size: 22px;
-  font-family: 'Montserrat', sans-serif;
+.glyphicon-search:hover {}
+
+.bar {
+    vertical-align: super;
+    font-weight: 700;
+    font-size: 22px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
-#searchBox li:hover{
-  box-shadow: 0 0 15px 15px rgba(0,0,0,.1);
+#searchBox li:hover {
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, .1);
 }
 
 #searchBox ::-webkit-input-placeholder {
-  color: #bbb;
-  opacity: 1;
+    color: #bbb;
+    opacity: 1;
 }
 
 
 
-#searchBox :-ms-input-placeholder {  
-  color: #bbb;
-  opacity: 1;
+#searchBox :-ms-input-placeholder {
+    color: #bbb;
+    opacity: 1;
 }
 
-#mainBody{
-  font-family: 'Montserrat', sans-serif;
+#mainBody {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 60px;
 }
+
+ul>li {
+    margin-right: 25px;
+    font-weight: lighter;
+    cursor: pointer
+}
+
+li.active {
+    border-bottom: 3px solid silver;
+}
+
+.item-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #f6f6f6;
+}
+
+.menu-items {
+    list-style-type: none;
+    font-size: 11px;
+    display: inline-flex;
+    margin-bottom: 0;
+    margin-top: 20px
+}
+
+.btn-success {
+    width: 100%;
+    border-radius: 0;
+}
+
+.title-price {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: black
+}
+
+.title-attr {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: black;
+}
+
+.btn-minus {
+    cursor: pointer;
+    font-size: 7px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid gray;
+    border-radius: 2px;
+    border-right: 0;
+}
+
+.btn-plus {
+    cursor: pointer;
+    font-size: 7px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid gray;
+    border-radius: 2px;
+    border-left: 0;
+}
+
+div.section>div {
+    width: 100%;
+    display: inline-flex;
+}
+
+div.section>div>input {
+    margin: 0;
+    padding-left: 5px;
+    font-size: 10px;
+    padding-right: 5px;
+    max-width: 18%;
+    text-align: center;
+}
+
+.attr,
+.attr2 {
+    cursor: pointer;
+    margin-right: 5px;
+    height: 20px;
+    font-size: 10px;
+    padding: 2px;
+    border: 1px solid gray;
+    border-radius: 2px;
+}
+
+.attr.active,
+.attr2.active {
+    border: 1px solid orange;
+}
+
+@media (max-width: 426px) {
+    .container {
+        margin-top: 0px !important;
+    }
+
+    .container>.row {
+        padding: 0 !important;
+    }
+
+    .container>.row>.col-xs-12.col-sm-5 {
+        padding-right: 0;
+    }
+
+    .container>.row>.col-xs-12.col-sm-9>div>p {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .container>.row>.col-xs-12.col-sm-9>div>ul {
+        padding-left: 10px !important;
+
+    }
+
+    .section {
+        width: 104%;
+    }
+
+    .menu-items {
+        padding-left: 0;
+    }
+}
+
 
 /*********media query starts ***********/
 
-@media screen and (max-width: 420px){
-  #searchBar,.glyphicon{
-    font-size: 16px;
-  } 
-  
-#searchBox  h1{
-    font-size: 28px;
-  } 
+@media screen and (max-width: 420px) {
+
+    #searchBar,
+    .glyphicon {
+        font-size: 16px;
+    }
+
+    #searchBox h1 {
+        font-size: 28px;
+    }
 }

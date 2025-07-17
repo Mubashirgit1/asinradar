@@ -30,11 +30,11 @@ $(document).ready(function () {
       .join('');
   }
 
-let isSearching = false;
+  let isSearching = false;
 
   async function handleSearch() {
-      if (isSearching) return; // prevent double calls
-      isSearching = true;
+    if (isSearching) return; // prevent double calls
+    isSearching = true;
 
     const asin = $('#asinInput').val().trim();
     if (!asin) {
@@ -74,38 +74,45 @@ let isSearching = false;
   });
 
   function handleKeepaResponse(data) {
-      if (data.asin) {
-        const title = data.title;
-        var imageUrl = getProductImage(data);
-        const img = document.createElement('img');
-        img.src = imageUrl;
-        img.alt = title;
-        img.style.width = '300px'; // Optional: set image size
-        // Append image to container div
-        console.log(img);
-        $("#searchBox").animate({'padding-top':"0"}, 600);
-        $(".container-animate").animate({height:"30vh"}, 600);
-        $("footer").append("<p>----x--------x----</p>");
+    if (data.asin) {
+      const title = data.title;
+      const brand = data.brand;
+      const pattern = data.pattern;
+      const eanList = data.eanList;
+      var imageUrl = getProductImage(data);
 
-        document.getElementById('imageContainer').appendChild(img);
- 
-      } else {
-        console.log('No product data found.');
-      }
-    
-    }
-    function getProductImage(data) {
-      if (data.image) {
-          return data.image;
-      } else {
-        // Fallback to ASIN-based image URL
-        return `https://images-na.ssl-images-amazon.com/images/P/${data.asin}.jpg`;
-      }
+      const img = document.createElement('img');
+      img.src = imageUrl;
+      img.alt = title;
+      img.style.width = '300px'; // Optional: set image size
+      // Append image to container div
+      $("#searchBox").animate({ 'padding-top': "0" }, 600);
+      $(".container-animate").animate({ height: "30vh" }, 600);
+      document.getElementById('imageContainer').appendChild(img);
+      // Append Title to container div
+       document.getElementById("title").textContent = title;
+       document.getElementById("brand").textContent = brand;
+       document.getElementById("pattern").textContent = pattern;
+       document.getElementById("eanList").textContent = eanList;
+       
+
+    } else {
+      console.log('No product data found.');
     }
 
- 
- 
+  }
+  function getProductImage(data) {
+    if (data.image) {
+      return data.image;
+    } else {
+      // Fallback to ASIN-based image URL
+      return `https://images-na.ssl-images-amazon.com/images/P/${data.asin}.jpg`;
+    }
+  }
 
- 
+
+
+
+
 
 });
