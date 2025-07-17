@@ -419,8 +419,7 @@ select {
 
 }
 
-.glyphicon-search:hover {}
-
+ 
 .bar {
     vertical-align: super;
     font-weight: 700;
@@ -447,7 +446,7 @@ select {
 
 #mainBody {
     font-family: 'Montserrat', sans-serif;
-    margin-top: 60px;
+    
 }
 
 ul>li {
