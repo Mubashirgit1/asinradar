@@ -10,32 +10,63 @@ $(document).ready(function () {
     }
     });
 
-  var keyword = "";
-  var resultArea = $("#results");
-  var searchBar = $("#searchBar");
-  var searchButton = $(".fa-search");
-    const inputElement = document.getElementById("myInput");
-  // Get its value
-  const inputValue = inputElement.value;
-  // var searchUrl = "https://api.keepa.com/product?key=&domain=3&asin=B07N4M94WP";
-   var displayResults = function(){
-   $.ajax({
-  url: "https://api.keepa.com/product",
-  data: {
-    key: "92r6c69co431sf1nkhov5hcoook0qsda622e93dn5rcau3n8b1ahbg22jus6bv33",
-    domain: 3,               // e.g., 1 for Amazon.com
-    asin: "B0002GTTRC"
-  },
-  method: "GET",
-  success: function (response) {
-    console.log(response);
-    handleKeepaResponse(response);
+
     
-  },
-  error: function (xhr, status, error) {
-    console.error("Error:", status, error);
+   const sharedSecret = 'my_super_secret_shared_key'; // same secret as backend
+
+  async function generateHMACSignature(secret, timestamp) {
+    const encoder = new TextEncoder();
+    const keyData = encoder.encode(secret);
+    const message = encoder.encode(timestamp.toString());
+
+    const key = await crypto.subtle.importKey(
+      'raw',
+      keyData,
+      { name: 'HMAC', hash: 'SHA-256' },
+      false,
+      ['sign']
+    );
+
+    const sigBuffer = await crypto.subtle.sign('HMAC', key, message);
+    return Array.from(new Uint8Array(sigBuffer))
+                .map(b => b.toString(16).padStart(2, '0'))
+                .join('');
   }
-});
+
+  // 👇 wrap your event handler in async function
+  $(document).ready(function () {
+    $('#callApi').on('click', async function () {
+      const asin = $('#asin').val().trim();
+      if (!asin) {
+        alert('Please enter an ASIN.');
+        return;
+      }
+
+      const timestamp = Date.now();
+      const signature = await generateHMACSignature(sharedSecret, timestamp);
+
+      $.ajax({
+        url: `https://yourdomain.com/keepa.php?asin=${asin}`,
+        method: 'GET',
+        headers: {
+          'X-TIMESTAMP': timestamp.toString(),
+          'X-SIGNATURE': signature
+        },
+        success: function (data) {
+          $('#result').text(JSON.stringify(data, null, 2));
+        },
+        error: function (xhr, status, err) {
+          $('#result').text('Error: ' + (xhr.responseText || err));
+        }
+      });
+    });
+  });
+
+
+
+ 
+   var displayResults = function(){
+
 
 function handleKeepaResponse(data) {
   if (data.products && data.products.length > 0) {
@@ -72,43 +103,7 @@ function getProductImage(product) {
   }
 }
 
-    // $.ajax({
-    //   url: searchUrl,
-    //   dataType: 'jsonp',
-    //   data: {
-    //     action: 'query',
-    //     format: 'json',
-    //     generator: 'search',
-    //       gsrsearch: keyword,
-    //       gsrnamespace: 0,
-    //       gsrlimit: 10,
-    //     prop:'extracts|pageimages',
-    //       exchars: 200,
-    //       exlimit: 'max',
-    //       explaintext: true,
-    //       exintro: true,
-    //       piprop: 'thumbnail',
-    //       pilimit: 'max',
-    //       pithumbsize: 200
-    //   },
-    //   success: function(json){
-    //     console.log(json);
-    //     var results = json.query.pages;
-    //     $.map(results, function(result){
-    //       var link = "http://en.wikipedia.org/?curid="+result.pageid;
-    //       var elem1 = $('<a>');
-    //       elem1.attr("href",link);
-    //       elem1.attr("target","_blank");
-    //       var elem2 = $('<li>');
-    //       elem2.append($('<h3>').text(result.title));
-    //       //if(result.thumbnail) elem.append($('<img>').attr('width',150).attr('src',result.thumbnail.source));
-    //       elem2.append($('<p>').text(result.extract));
-    //       elem1.append(elem2);
-    //       resultArea.append(elem1);
-    //     });
-       
-    //   }
-    // });   
+    
      $("footer").append("<p>----x--------x----</p>");
   };
   searchButton.click(function(){
