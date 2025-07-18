@@ -85,7 +85,6 @@ $(document).ready(function () {
         buybox = "Buy Box not available";
       } else {
         buybox = (price / 100).toFixed(2);
-
       }
       var imageUrl = getProductImage(data);
       const img = document.createElement('img');
