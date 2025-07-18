@@ -89,29 +89,38 @@
                 </div>
                 <div class="col-md-6" style="border:0px solid gray">
                     <h3 id="title"></h3>    
-                    <h5 style="color:#337ab7"> <a id="brand" href="#"></a> · <small style="color:#337ab7">(5054 ventas)</small></h5>
-                    <h6 class="title-price"><small>PRECIO OFERTA</small></h6>
-                    <h3 style="margin-top:0px;">U$S 399</h3>
-                    <small>Monthly Sold: <span id="m_sold"></span></small>
+                    <h5 style="color:#337ab7"> <a id="brand" href="#"></a> · <small style="color:#337ab7"> (5054 reviews)</small></h5>
+                    <h6 class="title-price"><small>Buy Box Price</small></h6>
+                    <h3 style="margin-top:0px;">£10</h3>
+                    <small>Monthly Sold:  <span id="m_sold"></span></small>
+                    
                     <div class="section">
-                        <h6 class="title-attr" style="margin-top:15px;" ><small>FBA FEES</small><span id="fba_fee"></span></h6>                    
-                    </div>
-                    <div class="section">
-                        <h6 class="title-attr" style="margin-top:15px;" ><small>COLOR</small><span id="pattern"></span></h6>                    
+                        <h6 class="title-attr" style="padding-bottom:2px;" ><small> COLOR: <span id="pattern"></span></small></h6>                    
                     </div>
                     <div class="section" style="padding-bottom:2px;">
-                        <h6 class="title-attr"><small>Category:</small> <span id="category"></span></h6>                    
+                        <h6 class="title-attr"><small>Category: <span id="category"></span></small> </h6>                    
                     </div>
                     <div class="section" style="padding-bottom:2px;">
                         <h6 class="title-attr"><small>EAN: <span id="eanList"></span></small></h6>                    
                     </div>   
                     <div class="section" style="padding-bottom:10px;">
-                        <h6 class="title-attr"><small>Cost Of Goods</small></h6>                    
+                        <h6 class="title-attr"><small>FBA FEES:</small></h6>                    
                         <div>
-                            <input value="1" />
+                            <input type="number" name="fba_fee" id="fba_fee" />
                         </div>
                     </div>                
-        
+                    <div class="section" style="padding-bottom:10px;">
+                        <h6 class="title-attr"><small>Cost Of Goods</small></h6>                    
+                        <div>
+                            <input type="number" name="cog" id="cog" />
+                        </div>
+                    </div>                
+                        <div class="section" style="padding-bottom:10px;">
+                        <h6 class="title-attr"><small>Profit</small></h6>                    
+                        <div>
+                            <input type="number" name="profit" id="profit" />
+                        </div>
+                    </div>
                     <div class="section" style="padding-bottom:20px;">
                         <button class="btn btn-success"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Agregar al carro</button>
                         <h6><a href="#"><span class="glyphicon glyphicon-heart-empty" style="cursor:pointer;"></span> Agregar a lista de deseos</a></h6>
