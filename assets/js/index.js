@@ -127,9 +127,9 @@ $(document).ready(function () {
     amazon_fee = document.getElementById("fba_fee").value;
     costog = document.getElementById("cog").value;
 
-    var price = parseFloat(price) || 0;
-    var costog = parseInt(cog) || 0;
-    var fba_fee = parseInt(fba_fee) || 0;
+    var saleprice = parseFloat(saleprice) || 0;
+    var costog = parseInt(costog) || 0;
+    var amazon_fee = parseInt(amazon_fee) || 0;
     var profit = saleprice - amazon_fee - costog;
     document.getElementById("profit").value = profit.toFixed(2)
   }
