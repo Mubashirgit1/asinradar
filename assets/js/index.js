@@ -75,7 +75,18 @@ $(document).ready(function () {
 
   function handleKeepaResponse(data) {
     if (data.asin) {
-      const title = data.title;
+      const COG = document.getElementById("cog");
+
+      var title = data.title;
+      var price = data.price;
+      var profit = 0;
+
+      if (price <= 0) {
+        buybox = "Buy Box not available";
+      } else {
+        buybox = (price / 100).toFixed(2);
+
+      }
       var imageUrl = getProductImage(data);
       const img = document.createElement('img');
       img.src = imageUrl;
@@ -86,19 +97,20 @@ $(document).ready(function () {
       $(".container-animate").animate({ height: "30vh" }, 600);
       document.getElementById('imageContainer').appendChild(img);
       // Append Title to container div
-       document.getElementById("title").textContent = title;
-       document.getElementById("brand").textContent = data.brand;
-       document.getElementById("pattern").textContent = data.pattern;
-       document.getElementById("eanList").textContent = data.eanList;
-       document.getElementById("category").textContent = data.category;
-       document.getElementById("m_sold").textContent = data.monthlySold;
-       document.getElementById("description").textContent = data.description;
-       document.getElementById("fba_fee").textContent = data.fba_fee;
-       
+      document.getElementById("title").textContent = title;
+      document.getElementById("brand").textContent = data.brand;
+      document.getElementById("pattern").textContent = data.pattern;
+      document.getElementById("eanList").textContent = data.eanList;
+      document.getElementById("category").textContent = data.category;
+      document.getElementById("m_sold").textContent = data.monthlySold;
+      document.getElementById("description").textContent = data.description;
+      document.getElementById("fba_fee").value = data.fba_fee;
+      document.getElementById("profit").value = profit;
+      document.getElementById("price").textContent = buybox;
+
     } else {
       console.log('No product data found.');
     }
-
   }
   function getProductImage(data) {
     if (data.image) {
@@ -111,6 +123,21 @@ $(document).ready(function () {
 
 
 
+  function calculateProfit() {
+    saleprice = document.getElementById("price").textContent;
+    amazon_fee = document.getElementById("fba_fee").value;
+    costog = document.getElementById("cog").value;
+
+    var price = parseFloat(price) || 0;
+    var costog = parseInt(cog) || 0;
+    var fba_fee = parseInt(fba_fee) || 0;
+    var profit = saleprice - amazon_fee - costog;
+    document.getElementById("profit").value = profit.toFixed(2)
+  }
+
+  var inputv = document.getElementById("cog");
+
+  inputv.addEventListener("input", calculateProfit);
 
 
 
