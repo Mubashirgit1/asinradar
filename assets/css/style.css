@@ -579,7 +579,57 @@ div.section>div>input {
     }
 }
 
+/* input fields */
+  .input-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding-bottom: 20px;
+  }
 
+  .input-field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-field label {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .input-field input {
+    padding: 5px 10px;
+    width: 100px;
+  }
+#brand,#reviews {
+    color:#337ab7;
+}
+ .menu-items {
+    display: flex;
+    list-style: none;
+    border-bottom: 1px solid silver;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu-items li {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  .menu-items li.active {  
+    border: 1px solid silver;
+    border-bottom: none;
+  }
+
+  .tab-content {
+     
+    border-top: none;
+    padding: 15px;
+  }
 /*********media query starts ***********/
 
 @media screen and (max-width: 420px) {

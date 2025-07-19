@@ -10,6 +10,22 @@ $(document).ready(function () {
     }
   });
 
+    const tabs = document.querySelectorAll('.menu-items li');
+  const contents = document.querySelectorAll('.tab-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Remove active class from all tabs
+      tabs.forEach(t => t.classList.remove('active'));
+      // Hide all content
+      contents.forEach(c => c.style.display = 'none');
+
+      // Activate clicked tab
+      tab.classList.add('active');
+      const tabId = tab.getAttribute('data-tab');
+      document.getElementById(tabId).style.display = 'block';
+    });
+  });
 
   const sharedSecret = 'a9f1c2e741f1cd9e27f839a98fcb82715e4f30c961b879a69f2e13e3a4a6d84b'; // same secret as backend
   async function generateHMACSignature(secret, timestamp) {
@@ -31,7 +47,6 @@ $(document).ready(function () {
   }
 
   let isSearching = false;
-
   async function handleSearch() {
     if (isSearching) return; // prevent double calls
     isSearching = true;
@@ -75,12 +90,9 @@ $(document).ready(function () {
 
   function handleKeepaResponse(data) {
     if (data.asin) {
-      const COG = document.getElementById("cog");
-
       var title = data.title;
       var price = data.price;
       var profit = 0;
-
       if (price <= 0) {
         buybox = "Buy Box not available";
       } else {
@@ -92,8 +104,8 @@ $(document).ready(function () {
       img.alt = title;
       img.style.width = '300px'; // Optional: set image size
       // Append image to container div
-      $("#searchBox").animate({ 'padding-top': "0" }, 600);
-      $(".container-animate").animate({ height: "30vh" }, 600);
+      $("#searchBox").animate({ 'padding-top': "15px" }, 600);
+      $(".container-animate").animate({ height: "20vh" }, 600);
       document.getElementById('imageContainer').appendChild(img);
       // Append Title to container div
       document.getElementById("title").textContent = title;
@@ -105,8 +117,13 @@ $(document).ready(function () {
       document.getElementById("description").textContent = data.description;
       document.getElementById("fba_fee").value = data.fba_fee;
       document.getElementById("profit").value = profit;
-      document.getElementById("price").textContent = buybox;
-
+      document.getElementById("price").textContent = data.buybox;
+      document.getElementById("height").textContent = data.height;
+      document.getElementById("width").textContent = data.width;
+      document.getElementById("length").textContent = data.length;
+      document.getElementById("weight").textContent = data.weight;
+      document.getElementById("material").textContent = data.material;
+      document.getElementById("variation").textContent = data.variation;
     } else {
       console.log('No product data found.');
     }
@@ -126,7 +143,6 @@ $(document).ready(function () {
     saleprice = document.getElementById("price").textContent;
     amazon_fee = document.getElementById("fba_fee").value;
     costog = document.getElementById("cog").value;
-
     var saleprice = parseFloat(saleprice) || 0;
     var costog = parseFloat(costog) || 0;
     var amazon_fee = parseFloat(amazon_fee) || 0;
@@ -135,9 +151,6 @@ $(document).ready(function () {
   }
 
   var inputv = document.getElementById("cog");
-
   inputv.addEventListener("input", calculateProfit);
-
-
 
 });

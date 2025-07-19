@@ -70,85 +70,87 @@
         </div>
     </div>
 
-<header class="container-fluid container-animate">
-  <div class="container text-center" id="searchBox">
-     <h1 class="text-center">ASIN RADAR</h1>
-    <div class="form col-xs-12">   
-        <input class="col-xs-9" id="asinInput" type="text" placeholder="search"/>
-        <span class="fa fa-search col-xs-1" id="searchButton" data-toggle="tooltip" title="Search"></span>
-      </div>
-    </div>
-  </div>  
-</header>
-<div id="mainBody" class="container">
+    <header class="container-fluid container-animate">
+        <div class="container text-center" id="searchBox">
+            <h1 class="text-center">ASIN RADAR</h1>
+            <div class="form col-xs-12">
+                <input class="col-xs-9" id="asinInput" type="text" placeholder="search" />
+                <span class="fa fa-search col-xs-1" id="searchButton" data-toggle="tooltip" title="Search"></span>
+            </div>
+        </div>
+        </div>
+    </header>
+    <div id="mainBody" class="container">
 
-        	<div class="row">
-               <div class="col-md-6 item-photo">
+        <div class="row">
+            <div class="col-md-6 item-photo">
                 <div id="imageContainer">
                 </div>
-                </div>
-                <div class="col-md-6" style="border:0px solid gray">
-                    <h3 id="title"></h3>    
-                    <h5 style="color:#337ab7"> <a id="brand" href="#"></a> · <small style="color:#337ab7"> (5054 reviews)</small></h5>
-                    <h6 class="title-price"><small>Buy Box Price</small></h6>
-                    <h3 style="margin-top:0px;" >£<span id="price"></span></h3>
-                    <small>Monthly Sold:  <span id="m_sold"></span></small>
-                    
-                    <div class="section">
-                        <h6 class="title-attr" style="padding-bottom:2px;" ><small> COLOR: <span id="pattern"></span></small></h6>                    
-                    </div>
-                    <div class="section" style="padding-bottom:2px;">
-                        <h6 class="title-attr"><small>Category: <span id="category"></span></small> </h6>                    
-                    </div>
-                    <div class="section" style="padding-bottom:2px;">
-                        <h6 class="title-attr"><small>EAN: <span id="eanList"></span></small></h6>                    
-                    </div>   
-                    <div class="section" style="padding-bottom:10px;">
-                        <h6 class="title-attr"><small>FBA FEES:</small></h6>                    
-                        <div>
-                            <input type="number" name="fba_fee" id="fba_fee" />
-                        </div>
-                    </div>                
-                    <div class="section" style="padding-bottom:10px;">
-                        <h6 class="title-attr"><small>Cost Of Goods</small></h6>                    
-                        <div>
-                            <input type="number" name="cog" id="cog" />
-                        </div>
-                    </div>                
-                        <div class="section" style="padding-bottom:10px;">
-                        <h6 class="title-attr"><small>Profit</small></h6>                    
-                        <div>
-                            <input type="text" name="profit" id="profit" readonly  />
-                        </div>
-                    </div>
-                    <div class="section" style="padding-bottom:20px;">
-                        <button class="btn btn-success"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Agregar al carro</button>
-                        <h6><a href="#"><span class="glyphicon glyphicon-heart-empty" style="cursor:pointer;"></span> Agregar a lista de deseos</a></h6>
-                    </div>                                        
-                </div>                              
-        
-                <div class="col-xs-9">
-                    <ul class="menu-items">
-                        <li class="active">Description</li>
-                         
-                    </ul>
-                    <div style="width:100%;border-top:1px solid silver">
-                        <p style="padding:15px;" id="description">
-                          
-                        </p>
-                       
-                    </div>
-                </div>		
             </div>
-        </div>    
-</div>
-<footer class="text-center">
-  
-</footer>
-   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="assets/js/index.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+            <div class="col-md-6" style="border:0px solid gray">
+                <h3 id="title"></h3>
+                <h5> <a id="brand" href="#"></a> · <small id="reviews"> (5054
+                        reviews)</small></h5>
+
+                <p>Buy Box Price</p>
+                <h3 style="margin-top:0px;">£<span id="price"></span></h3>
+                <small>Monthly Sold: <span id="m_sold"></span></small>
+                
+                <p>COLOR: <span id="pattern"></span></p>
+                <p>Category: <span id="category"></span></p>
+                <p>EAN: <span id="eanList"></span></p>
+                <p>Dimension: <span id="height"></span><span id="width"></span><span id="length"></span></p>
+                <p>Material: <span id="material"></span></p>
+                <div class="input-group">
+                    <div class="input-field">
+                        <label for="cog">Cost</label>
+                        <input type="number" id="cog" />
+                    </div>
+
+                    <div class="input-field">
+                        <label for="fba_fee">FBA Fees</label>
+                        <input type="number" id="fba_fee" name="fba_fee" />
+                    </div>
+
+                    <div class="input-field">
+                        <label for="profit">Profit</label>
+                        <input type="text" id="profit" readonly />
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <button class="btn btn-success"><span style="margin-right:20px"
+                            class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Agregar al
+                        carro</button>
+                    <h6><a href="#"><span class="glyphicon glyphicon-heart-empty" style="cursor:pointer;"></span>
+                            Agregar a lista de deseos</a></h6>
+                </div>
+            </div>
+
+            <div class="col-xs-9">
+                <ul class="menu-items">
+                <li class="active" data-tab="description">Description</li>
+                <li data-tab="variatons">Variations</li>
+                </ul>
+
+                <div class="tab-content" id="description">
+                <p>This is the description content.</p>
+                </div>
+
+                <div class="tab-content" id="variatons" style="display:none;">
+                <p >Variations</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer class="text-center">
+
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
 
 </body>
 
