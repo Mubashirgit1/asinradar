@@ -117,14 +117,13 @@ $(document).ready(function () {
       document.getElementById("description").textContent = data.description;
       document.getElementById("fba_fee").value = data.fba_fee;
       document.getElementById("profit").value = profit;
-      document.getElementById("price").textContent = data.buybox;
+      document.getElementById("price").textContent = buybox;
       document.getElementById("height").textContent = data.height;
       document.getElementById("width").textContent = data.width;
       document.getElementById("length").textContent = data.length;
       document.getElementById("weight").textContent = data.weight;
       document.getElementById("material").textContent = data.material;
-      if(data.variation[0]){
-
+      if(data.variation){
         handlevariation(data.variation);
       }
 
