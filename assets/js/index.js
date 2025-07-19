@@ -157,7 +157,7 @@ function handlevariation(variations){
 variations.forEach(variant => {
   const style = variant.attributes[0].value;
   const asin = variant.asin;
-  const img = variant.image || getProductImage(variant.image,variant.asin);
+  const img = getProductImage(variant.image,variant.asin);
   const item = document.createElement("div");
   item.className = "variation-item";
   item.innerHTML = `
