@@ -147,7 +147,8 @@ function handlevariation(variations){
 variations.forEach(variant => {
   const style = variant.attributes[0].value;
   const asin = variant.asin;
-  const img = variant.image || "https://via.placeholder.com/100?text=No+Image";
+  const img = variant.image || getProductImage(variant.asin);;
+
 
   const variationCard = document.createElement("div");
   variationCard.style.border = "1px solid #ccc";
