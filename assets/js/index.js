@@ -98,7 +98,7 @@ $(document).ready(function () {
       } else {
         buybox = (price / 100).toFixed(2);
       }
-      var imageUrl = getProductImage(data.image);
+      var imageUrl = getProductImage(data.image,data.asin);
       const img = document.createElement('img');
       img.src = imageUrl;
       img.alt = title;
@@ -133,9 +133,8 @@ $(document).ready(function () {
     }
   }
 
-  function getProductImage(image) {
-    if (image) {
-
+  function getProductImage(image,asin) {
+    if (image != null) {
         if(image.includes(",")){
               var imageNames = image.split(',');
               // Get the first image name
@@ -147,9 +146,10 @@ $(document).ready(function () {
         return `https://images-na.ssl-images-amazon.com/images/I/${firstImageName}.jpg`;
     } else {
       // Fallback to ASIN-based image URL
-      return `https://images-na.ssl-images-amazon.com/images/P/${data.asin}.jpg`;
+      return `https://images-na.ssl-images-amazon.com/images/P/${asin}.jpg`;
     }
   }
+
 
 function handlevariation(variations){
   const gallery = document.getElementById("variation-container");
@@ -157,8 +157,7 @@ function handlevariation(variations){
 variations.forEach(variant => {
   const style = variant.attributes[0].value;
   const asin = variant.asin;
-  const img = variant.image || getProductImage(variant);;
-
+  const img = variant.image || getProductImage(variant.image,variant.asin);
   const item = document.createElement("div");
   item.className = "variation-item";
   item.innerHTML = `
