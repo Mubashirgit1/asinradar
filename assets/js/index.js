@@ -142,33 +142,50 @@ $(document).ready(function () {
   }
 
 function handlevariation(variations){
-  const container = document.getElementById("variation-container");
+  const gallery = document.getElementById("variation-container");
 
 variations.forEach(variant => {
   const style = variant.attributes[0].value;
   const asin = variant.asin;
   const img = variant.image || getProductImage(variant);;
 
-
-  const variationCard = document.createElement("div");
-  variationCard.style.border = "1px solid #ccc";
-  variationCard.style.padding = "10px";
-  variationCard.style.marginBottom = "10px";
-  variationCard.style.display = "flex";
-  variationCard.style.alignItems = "center";
-  variationCard.style.gap = "10px";
-
-  variationCard.innerHTML = `
-    <img src="${img}" alt="${style}" style="width: 80px; height: 80px; object-fit: cover;">
-    <div>
-      <strong>Style:</strong> ${style} <br>
-      <strong>ASIN:</strong> ${asin}
-    </div>
+  const item = document.createElement("div");
+  item.className = "variation-item";
+  item.innerHTML = `
+    <img src="${img}" alt="${style}">
+    <div>${style}</div>
   `;
 
-  container.appendChild(variationCard);
+  gallery.appendChild(item);
 });
 }
+// variations.forEach(variant => {
+
+//   const style = variant.attributes[0].value;
+//   const asin = variant.asin;
+//   const img = variant.image || getProductImage(variant);;
+
+
+//   const variationCard = document.createElement("div");
+//   variationCard.style.border = "1px solid #ccc";
+//   variationCard.style.padding = "10px";
+//   variationCard.style.marginBottom = "10px";
+//   variationCard.style.display = "flex";
+//   variationCard.style.alignItems = "center";
+//   variationCard.style.gap = "10px";
+
+//   variationCard.innerHTML = `
+//     <img src="${img}" alt="${style}" style="width: 80px; height: 80px; object-fit: cover;">
+//     <div>
+//       <strong>Style:</strong> ${style} <br>
+//       <strong>ASIN:</strong> ${asin}
+//     </div>
+//   `;
+
+//   container.appendChild(variationCard);
+  
+// });
+// }
 
   function calculateProfit() {
     saleprice = document.getElementById("price").textContent;

@@ -630,6 +630,25 @@ div.section>div>input {
     border-top: none;
     padding: 15px;
   }
+    .variation-inline {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; /* allow wrapping if too many */
+    padding: 10px;
+  }
+
+  .variation-item {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .variation-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
 /*********media query starts ***********/
 
 @media screen and (max-width: 420px) {
