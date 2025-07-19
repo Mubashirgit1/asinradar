@@ -147,7 +147,7 @@ function handlevariation(variations){
 variations.forEach(variant => {
   const style = variant.attributes[0].value;
   const asin = variant.asin;
-  const img = variant.image || getProductImage(variant.asin);;
+  const img = variant.image || getProductImage(variant);;
 
 
   const variationCard = document.createElement("div");
