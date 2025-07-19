@@ -123,7 +123,12 @@ $(document).ready(function () {
       document.getElementById("length").textContent = data.length;
       document.getElementById("weight").textContent = data.weight;
       document.getElementById("material").textContent = data.material;
-      document.getElementById("variation").textContent = data.variation;
+      if(data.variation[0]){
+
+        handlevariation(data.variation);
+      }
+
+
     } else {
       console.log('No product data found.');
     }
@@ -137,7 +142,33 @@ $(document).ready(function () {
     }
   }
 
+function handlevariation(variations){
+  const container = document.getElementById("variation-container");
 
+variations.forEach(variant => {
+  const style = variant.attributes[0].value;
+  const asin = variant.asin;
+  const img = variant.image || "https://via.placeholder.com/100?text=No+Image";
+
+  const variationCard = document.createElement("div");
+  variationCard.style.border = "1px solid #ccc";
+  variationCard.style.padding = "10px";
+  variationCard.style.marginBottom = "10px";
+  variationCard.style.display = "flex";
+  variationCard.style.alignItems = "center";
+  variationCard.style.gap = "10px";
+
+  variationCard.innerHTML = `
+    <img src="${img}" alt="${style}" style="width: 80px; height: 80px; object-fit: cover;">
+    <div>
+      <strong>Style:</strong> ${style} <br>
+      <strong>ASIN:</strong> ${asin}
+    </div>
+  `;
+
+  container.appendChild(variationCard);
+});
+}
 
   function calculateProfit() {
     saleprice = document.getElementById("price").textContent;
