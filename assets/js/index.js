@@ -136,7 +136,7 @@ $(document).ready(function () {
   function getProductImage(image) {
     if (image) {
 
-        if(isArray(image)){
+        if(image.includes(",")){
               var imageNames = image.imagesCSV.split(',');
               // Get the first image name
               var firstImageName = imageNames[0];
