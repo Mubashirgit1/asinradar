@@ -137,7 +137,7 @@ $(document).ready(function () {
     if (image) {
 
         if(image.includes(",")){
-              var imageNames = image.imagesCSV.split(',');
+              var imageNames = image.split(',');
               // Get the first image name
               var firstImageName = imageNames[0];
         }else{
