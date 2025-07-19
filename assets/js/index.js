@@ -98,7 +98,7 @@ $(document).ready(function () {
       } else {
         buybox = (price / 100).toFixed(2);
       }
-      var imageUrl = getProductImage(data);
+      var imageUrl = getProductImage(data.image);
       const img = document.createElement('img');
       img.src = imageUrl;
       img.alt = title;
@@ -132,9 +132,19 @@ $(document).ready(function () {
       console.log('No product data found.');
     }
   }
-  function getProductImage(data) {
-    if (data.image) {
-      return data.image;
+
+  function getProductImage(image) {
+    if (image) {
+
+        if(isArray(image)){
+              var imageNames = image.imagesCSV.split(',');
+              // Get the first image name
+              var firstImageName = imageNames[0];
+        }else{
+              var firstImageName = image;
+        }
+        // Build the image URL
+        return `https://images-na.ssl-images-amazon.com/images/I/${firstImageName}.jpg`;
     } else {
       // Fallback to ASIN-based image URL
       return `https://images-na.ssl-images-amazon.com/images/P/${data.asin}.jpg`;
