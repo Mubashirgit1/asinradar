@@ -14,7 +14,15 @@ Explore new niches and product ideas to grow your Amazon store
 
 Whether you're an experienced seller or just starting out, ASIN RADAR helps you make smarter, data-driven decisions to boost your profits and stay ahead in the competitive Amazon marketplace.
 
+![ASIN RADAR Website shown on a range of devices](assets/images/responsive/responsive-view.png)
 
+[View ASIN RADAR on Github Pages](https://mubashirgit1.github.io/asinradar/)
+
+![GitHub last commit](https://img.shields.io/github/last-commit/Mubashirgit1/asinradar?color=red)
+![GitHub contributors](https://img.shields.io/github/contributors/Mubashirgit1/asinradar?color=orange)
+![GitHub language count](https://img.shields.io/github/languages/count/Mubashirgit1/asinradar?color=yellow)
+![GitHub top language](https://img.shields.io/github/languages/top/Mubashirgit1/asinradar?color=green)
+![W3C Validation](https://img.shields.io/w3c-validation/html?color=blueviolet&targetUrl=https%3A%2F%2Fmubashirgit1.github.io%2Fasinradar)
 ---
 ## CONTENTS
 
