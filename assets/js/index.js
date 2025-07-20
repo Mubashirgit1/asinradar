@@ -1,79 +1,70 @@
 $(document).ready(function () {
+  const sharedSecret = 'a9f1c2e741f1cd9e27f839a98fcb82715e4f30c961b879a69f2e13e3a4a6d84b';
 
-  
+  const navbar = document.getElementById('mainNavbar');
+  const mainBody = document.getElementById('mainBody');
+  const notFound = document.getElementById('not-found');
+  const variationContainer = document.getElementById("variation-container");
+
+  let isSearching = false;
+
   $('#slider-animation').on('slid.bs.carousel', function (e) {
-    var items = $('#slider-animation .carousel-item');
-    var activeIndex = items.index($(e.relatedTarget));
-    var navbar = document.getElementById('mainNavbar');
-    if (activeIndex === 2) {
-      navbar.classList.add('navbar-dark-mode');
-    } else {
-      navbar.classList.remove('navbar-dark-mode');
-    }
+    const items = $('#slider-animation .carousel-item');
+    const activeIndex = items.index($(e.relatedTarget));
+    navbar.classList.toggle('navbar-dark-mode', activeIndex === 2);
   });
 
-  const tabs = document.querySelectorAll('.menu-items li');
-  const contents = document.querySelectorAll('.tab-content');
-
-  tabs.forEach(tab => {
+  document.querySelectorAll('.menu-items li').forEach(tab => {
     tab.addEventListener('click', () => {
-      // Remove active class from all tabs
-      tabs.forEach(t => t.classList.remove('active'));
-      // Hide all content
-      contents.forEach(c => c.style.display = 'none');
+      document.querySelectorAll('.menu-items li').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
 
-      // Activate clicked tab
       tab.classList.add('active');
-      const tabId = tab.getAttribute('data-tab');
-      document.getElementById(tabId).style.display = 'block';
+      document.getElementById(tab.dataset.tab).style.display = 'block';
     });
   });
 
-  const sharedSecret = 'a9f1c2e741f1cd9e27f839a98fcb82715e4f30c961b879a69f2e13e3a4a6d84b'; // same secret as backend
   async function generateHMACSignature(secret, timestamp) {
     const encoder = new TextEncoder();
-    const keyData = encoder.encode(secret);
-    const message = encoder.encode(timestamp.toString());
-
     const key = await crypto.subtle.importKey(
       'raw',
-      keyData,
+      encoder.encode(secret),
       { name: 'HMAC', hash: 'SHA-256' },
       false,
       ['sign']
     );
-    const sigBuffer = await crypto.subtle.sign('HMAC', key, message);
-    return Array.from(new Uint8Array(sigBuffer))
-      .map(b => b.toString(16).padStart(2, '0'))
-      .join('');
+    const signature = await crypto.subtle.sign('HMAC', key, encoder.encode(timestamp.toString()));
+    return Array.from(new Uint8Array(signature)).map(b => b.toString(16).padStart(2, '0')).join('');
   }
 
-  if (document.getElementById('mainBody')) {
-    document.getElementById('mainBody').style.display = 'none';
+  function getProductImage(image, asin) {
+    const firstImage = image?.includes(",") ? image.split(',')[0] : image;
+    return firstImage
+      ? `https://images-na.ssl-images-amazon.com/images/I/${firstImage}.jpg`
+      : `https://images-na.ssl-images-amazon.com/images/P/${asin}.jpg`;
   }
-  if (document.getElementById('not-found')) {
-    document.getElementById('not-found').style.display = 'none';
-  }
-  
 
-  let isSearching = false;
-  async function handleSearch(search  = null) {
-    if (isSearching) return; // prevent double calls
+  function clearUI() {
+    if (mainBody) mainBody.style.display = 'none';
+    if (notFound) notFound.style.display = 'none';
+    document.getElementById("imageContainer").innerHTML = "";
+    variationContainer.innerHTML = "";
+    document.getElementById("cog").value = "";
+  }
+
+  async function handleSearch(query = null) {
+    if (isSearching) return;
     isSearching = true;
+    clearUI();
+
     try {
-      // your fetch or $.ajax code
-      var asin = $('#asinInput').val().trim();
-      if (!asin) {
-        if(search !== null){
-          asin = search;
-        }else{
-        alert('Please enter an ASIN');
-        return;
-        }
-      }
+      let asin = $('#asinInput').val().trim();
+      if (!asin && query !== null) asin = query;
+      if (!asin) return alert('Please enter an ASIN');
 
       const timestamp = Date.now();
       const signature = await generateHMACSignature(sharedSecret, timestamp);
+
       $.ajax({
         url: `https://liveprojects.online/asinradar/keepa.php?asin=${asin}`,
         method: 'GET',
@@ -83,148 +74,93 @@ $(document).ready(function () {
         },
         success: function (data) {
           $('#result').text(JSON.stringify(data, null, 2));
-          handleKeepaResponse(data);
-
+          renderProduct(data);
         },
         error: function (xhr, status, err) {
-        if (xhr.status === 404) {
-          $("#searchBox").animate({ 'padding-top': "15px" }, 600); 
-          $(".container-animate").animate({ height: "20vh" }, 600);
-          document.getElementById('not-found').style.display = 'block';
-        } else
-          $('#result').text('Error: ' + (xhr.responseText || err));
-        }
+          if (xhr.status === 404) {
+            animateUI();
+            notFound.style.display = 'block';
+          } else {
+            $('#result').text('Error: ' + (xhr.responseText || err));
+          }
+        },
+        complete: () => { isSearching = false; }
       });
+
     } catch (error) {
       console.error("API failed", error);
-    } finally {
-      isSearching = false; // ✅ always reset
-    }
-
-  }
-  // Click on search button
-  $('#searchButton').on('click', function () {
-    handleSearch();
-  });
-
-  // Press Enter in input field
-  $('#asinInput').on('keypress', function (e) {
-    if (e.which === 13) {
-      handleSearch();
-    }
-  });
-
-  // Get query string from URL
-  const params = new URLSearchParams(window.location.search);
-  const searchValue = params.get('query');
-  if (searchValue) {
-    // Now you can use `searchValue` in your API call or display it
-     handleSearch(searchValue);
-  }
-
-
-  function handleKeepaResponse(data) {
-    // Clear old content
-    document.getElementById("imageContainer").innerHTML = "";
-    document.getElementById("variation-container").innerHTML = "";
-    document.getElementById("cog").value = "";
-    if (data.asin) {
-      document.getElementById('mainBody').style.display = 'block';
-      var title = data.title;
-      var price = data.price;
-      var profit = 0;
-
-      var buybox = (price > 0) ? (price / 100).toFixed(2) : "Buy Box not available";
-
-      var imageUrl = getProductImage(data.image, data.asin);
-      const img = document.createElement('img');
-      img.src = imageUrl;
-      img.alt = title;
-      img.style.width = '300px';
-
-      $("#searchBox").animate({ 'padding-top': "15px" }, 600);
-      $(".container-animate").animate({ height: "20vh" }, 600);
-
-      document.getElementById('imageContainer').appendChild(img);
-      document.getElementById("title").textContent = title;
-      document.getElementById("brand").textContent = data.brand || "-";
-      document.getElementById("pattern").textContent = data.pattern || "-";
-      document.getElementById("eanList").textContent = data.eanList || "-";
-      document.getElementById("category").textContent = data.category || "-";
-      document.getElementById("m_sold").textContent = data.monthlySold || "0";
-      document.getElementById("description").textContent = data.description || "-";
-      document.getElementById("fba_fee").value = data.fba_fee || "";
-      document.getElementById("profit").value = profit;
-      document.getElementById("price").textContent = buybox;
-      document.getElementById("height").textContent = data.height || "-";
-      document.getElementById("width").textContent = data.width || "-";
-      document.getElementById("length").textContent = data.length || "-";
-      document.getElementById("weight").textContent = data.weight || "-";
-      document.getElementById("material").textContent = data.material || "-";
-
-      if (data.variation) {
-        handlevariation(data.variation);
-      }
-
-      calculateProfit(); // recalculate with new data
-    } else {
-      $("#searchBox").animate({ 'padding-top': "15px" }, 600);
-      $(".container-animate").animate({ height: "20vh" }, 600);
-      document.getElementById('not-found').style.display = 'block';
+      isSearching = false;
     }
   }
 
-  function getProductImage(image, asin) {
-    if (image != null) {
-      if (image.includes(",")) {
-        var imageNames = image.split(',');
-        // Get the first image name
-        var firstImageName = imageNames[0];
-      } else {
-        var firstImageName = image;
-      }
-      // Build the image URL
-      return `https://images-na.ssl-images-amazon.com/images/I/${firstImageName}.jpg`;
-    } else {
-      // Fallback to ASIN-based image URL
-      return `https://images-na.ssl-images-amazon.com/images/P/${asin}.jpg`;
+  function renderProduct(data) {
+    if (!data.asin) {
+      animateUI();
+      notFound.style.display = 'block';
+      return;
     }
+
+    mainBody.style.display = 'block';
+    animateUI();
+
+    document.getElementById("imageContainer").appendChild(Object.assign(document.createElement('img'), {
+      src: getProductImage(data.image, data.asin),
+      alt: data.title,
+      style: "width:300px"
+    }));
+
+    const setText = (id, value = "-") => document.getElementById(id).textContent = value;
+    setText("title", data.title);
+    setText("brand", data.brand);
+    setText("pattern", data.pattern);
+    setText("eanList", data.eanList);
+    setText("category", data.category);
+    setText("m_sold", data.monthlySold || "0");
+    setText("description", data.description);
+    setText("price", data.price > 0 ? (data.price / 100).toFixed(2) : "Buy Box not available");
+    setText("height", data.height);
+    setText("width", data.width);
+    setText("length", data.length);
+    setText("weight", data.weight);
+    setText("material", data.material);
+
+    document.getElementById("fba_fee").value = data.fba_fee || "";
+    document.getElementById("profit").value = "0.00";
+
+    if (data.variation) renderVariations(data.variation);
+    calculateProfit();
   }
 
-
-  function handlevariation(variations) {
-    const gallery = document.getElementById("variation-container");
-
+  function renderVariations(variations) {
     variations.forEach(variant => {
       const style = variant.attributes[0].value;
-      const asin = variant.asin;
-      const img = getProductImage(variant.image, variant.asin);
+      const imgUrl = getProductImage(variant.image, variant.asin);
       const item = document.createElement("div");
       item.className = "variation-item";
-      item.innerHTML = `
-    <img src="${img}" alt="${style}">
-    <div>${style}</div>
-  `;
-
-      gallery.appendChild(item);
+      item.innerHTML = `<img src="${imgUrl}" alt="${style}"><div>${style}</div>`;
+      variationContainer.appendChild(item);
     });
   }
 
-
   function calculateProfit() {
-    saleprice = document.getElementById("price").textContent;
-    amazon_fee = document.getElementById("fba_fee").value;
-    costog = document.getElementById("cog").value;
-    var saleprice = parseFloat(saleprice) || 0;
-    var costog = parseFloat(costog) || 0;
-    var amazon_fee = parseFloat(amazon_fee) || 0;
-    var profit = saleprice - amazon_fee - costog;
-    document.getElementById("profit").value = profit.toFixed(2)
+    const salePrice = parseFloat(document.getElementById("price").textContent) || 0;
+    const cost = parseFloat(document.getElementById("cog").value) || 0;
+    const fee = parseFloat(document.getElementById("fba_fee").value) || 0;
+    const profit = salePrice - fee - cost;
+    document.getElementById("profit").value = profit.toFixed(2);
   }
 
-  var inputv = document.getElementById("cog");
-  if(inputv){
-    inputv.addEventListener("input", calculateProfit);
+  function animateUI() {
+    $("#searchBox").animate({ 'padding-top': "15px" }, 600);
+    $(".container-animate").animate({ height: "20vh" }, 600);
   }
-  
+
+  // Event Listeners
+  $('#searchButton').on('click', () => handleSearch());
+  $('#asinInput').on('keypress', e => { if (e.which === 13) handleSearch(); });
+  document.getElementById("cog")?.addEventListener("input", calculateProfit);
+
+  // On page load, check URL params
+  const queryParam = new URLSearchParams(window.location.search).get('query');
+  if (queryParam) handleSearch(queryParam);
 });
