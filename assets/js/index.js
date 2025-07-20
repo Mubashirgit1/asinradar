@@ -10,7 +10,7 @@ $(document).ready(function () {
     }
   });
 
-    const tabs = document.querySelectorAll('.menu-items li');
+  const tabs = document.querySelectorAll('.menu-items li');
   const contents = document.querySelectorAll('.tab-content');
 
   tabs.forEach(tab => {
@@ -50,31 +50,38 @@ $(document).ready(function () {
   async function handleSearch() {
     if (isSearching) return; // prevent double calls
     isSearching = true;
+    try {
+      // your fetch or $.ajax code
+      const asin = $('#asinInput').val().trim();
+      if (!asin) {
+        alert('Please enter an ASIN');
+        return;
+      }
 
-    const asin = $('#asinInput').val().trim();
-    if (!asin) {
-      alert('Please enter an ASIN');
-      return;
+      const timestamp = Date.now();
+      const signature = await generateHMACSignature(sharedSecret, timestamp);
+      $.ajax({
+        url: `https://liveprojects.online/asinradar/keepa.php?asin=${asin}`,
+        method: 'GET',
+        headers: {
+          'X-TIMESTAMP': timestamp.toString(),
+          'X-SIGNATURE': signature
+        },
+        success: function (data) {
+          $('#result').text(JSON.stringify(data, null, 2));
+          handleKeepaResponse(data);
+
+        },
+        error: function (xhr, status, err) {
+          $('#result').text('Error: ' + (xhr.responseText || err));
+        }
+      });
+    } catch (error) {
+      console.error("API failed", error);
+    } finally {
+      isSearching = false; // ✅ always reset
     }
 
-    const timestamp = Date.now();
-    const signature = await generateHMACSignature(sharedSecret, timestamp);
-    $.ajax({
-      url: `https://liveprojects.online/asinradar/keepa.php?asin=${asin}`,
-      method: 'GET',
-      headers: {
-        'X-TIMESTAMP': timestamp.toString(),
-        'X-SIGNATURE': signature
-      },
-      success: function (data) {
-        $('#result').text(JSON.stringify(data, null, 2));
-        handleKeepaResponse(data);
-
-      },
-      error: function (xhr, status, err) {
-        $('#result').text('Error: ' + (xhr.responseText || err));
-      }
-    });
   }
   // Click on search button
   $('#searchButton').on('click', function () {
@@ -89,61 +96,64 @@ $(document).ready(function () {
   });
 
   function handleKeepaResponse(data) {
+    // Clear old content
+    document.getElementById("imageContainer").innerHTML = "";
+    document.getElementById("variation-container").innerHTML = "";
+
     if (data.asin) {
       var title = data.title;
       var price = data.price;
       var profit = 0;
-      if (price <= 0) {
-        buybox = "Buy Box not available";
-      } else {
-        buybox = (price / 100).toFixed(2);
-      }
-      var imageUrl = getProductImage(data.image,data.asin);
+
+      var buybox = (price > 0) ? (price / 100).toFixed(2) : "Buy Box not available";
+
+      var imageUrl = getProductImage(data.image, data.asin);
       const img = document.createElement('img');
       img.src = imageUrl;
       img.alt = title;
-      img.style.width = '300px'; // Optional: set image size
-      // Append image to container div
+      img.style.width = '300px';
+
       $("#searchBox").animate({ 'padding-top': "15px" }, 600);
       $(".container-animate").animate({ height: "20vh" }, 600);
+
       document.getElementById('imageContainer').appendChild(img);
-      // Append Title to container div
       document.getElementById("title").textContent = title;
-      document.getElementById("brand").textContent = data.brand;
-      document.getElementById("pattern").textContent = data.pattern;
-      document.getElementById("eanList").textContent = data.eanList;
-      document.getElementById("category").textContent = data.category;
-      document.getElementById("m_sold").textContent = data.monthlySold;
-      document.getElementById("description").textContent = data.description;
-      document.getElementById("fba_fee").value = data.fba_fee;
+      document.getElementById("brand").textContent = data.brand || "-";
+      document.getElementById("pattern").textContent = data.pattern || "-";
+      document.getElementById("eanList").textContent = data.eanList || "-";
+      document.getElementById("category").textContent = data.category || "-";
+      document.getElementById("m_sold").textContent = data.monthlySold || "0";
+      document.getElementById("description").textContent = data.description || "-";
+      document.getElementById("fba_fee").value = data.fba_fee || "";
       document.getElementById("profit").value = profit;
       document.getElementById("price").textContent = buybox;
-      document.getElementById("height").textContent = data.height;
-      document.getElementById("width").textContent = data.width;
-      document.getElementById("length").textContent = data.length;
-      document.getElementById("weight").textContent = data.weight;
-      document.getElementById("material").textContent = data.material;
-      if(data.variation){
+      document.getElementById("height").textContent = data.height || "-";
+      document.getElementById("width").textContent = data.width || "-";
+      document.getElementById("length").textContent = data.length || "-";
+      document.getElementById("weight").textContent = data.weight || "-";
+      document.getElementById("material").textContent = data.material || "-";
+
+      if (data.variation) {
         handlevariation(data.variation);
       }
 
-
+      calculateProfit(); // recalculate with new data
     } else {
       console.log('No product data found.');
     }
   }
 
-  function getProductImage(image,asin) {
+  function getProductImage(image, asin) {
     if (image != null) {
-        if(image.includes(",")){
-              var imageNames = image.split(',');
-              // Get the first image name
-              var firstImageName = imageNames[0];
-        }else{
-              var firstImageName = image;
-        }
-        // Build the image URL
-        return `https://images-na.ssl-images-amazon.com/images/I/${firstImageName}.jpg`;
+      if (image.includes(",")) {
+        var imageNames = image.split(',');
+        // Get the first image name
+        var firstImageName = imageNames[0];
+      } else {
+        var firstImageName = image;
+      }
+      // Build the image URL
+      return `https://images-na.ssl-images-amazon.com/images/I/${firstImageName}.jpg`;
     } else {
       // Fallback to ASIN-based image URL
       return `https://images-na.ssl-images-amazon.com/images/P/${asin}.jpg`;
@@ -151,50 +161,24 @@ $(document).ready(function () {
   }
 
 
-function handlevariation(variations){
-  const gallery = document.getElementById("variation-container");
+  function handlevariation(variations) {
+    const gallery = document.getElementById("variation-container");
 
-variations.forEach(variant => {
-  const style = variant.attributes[0].value;
-  const asin = variant.asin;
-  const img = getProductImage(variant.image,variant.asin);
-  const item = document.createElement("div");
-  item.className = "variation-item";
-  item.innerHTML = `
+    variations.forEach(variant => {
+      const style = variant.attributes[0].value;
+      const asin = variant.asin;
+      const img = getProductImage(variant.image, variant.asin);
+      const item = document.createElement("div");
+      item.className = "variation-item";
+      item.innerHTML = `
     <img src="${img}" alt="${style}">
     <div>${style}</div>
   `;
 
-  gallery.appendChild(item);
-});
-}
-// variations.forEach(variant => {
+      gallery.appendChild(item);
+    });
+  }
 
-//   const style = variant.attributes[0].value;
-//   const asin = variant.asin;
-//   const img = variant.image || getProductImage(variant);;
-
-
-//   const variationCard = document.createElement("div");
-//   variationCard.style.border = "1px solid #ccc";
-//   variationCard.style.padding = "10px";
-//   variationCard.style.marginBottom = "10px";
-//   variationCard.style.display = "flex";
-//   variationCard.style.alignItems = "center";
-//   variationCard.style.gap = "10px";
-
-//   variationCard.innerHTML = `
-//     <img src="${img}" alt="${style}" style="width: 80px; height: 80px; object-fit: cover;">
-//     <div>
-//       <strong>Style:</strong> ${style} <br>
-//       <strong>ASIN:</strong> ${asin}
-//     </div>
-//   `;
-
-//   container.appendChild(variationCard);
-  
-// });
-// }
 
   function calculateProfit() {
     saleprice = document.getElementById("price").textContent;

@@ -78,30 +78,36 @@
                 <span class="fa fa-search col-xs-1" id="searchButton" data-toggle="tooltip" title="Search"></span>
             </div>
         </div>
-        </div>
+
     </header>
     <div id="mainBody" class="container">
 
         <div class="row">
+            <!-- Left: Product Image -->
             <div class="col-md-6 item-photo">
-                <div id="imageContainer">
-                </div>
+                <div id="imageContainer"></div>
             </div>
-            <div class="col-md-6" style="border:0px solid gray">
+
+            <!-- Right: Product Info -->
+            <div class="col-md-6">
                 <h3 id="title"></h3>
-                <h5> <a id="brand" href="#"></a> · <small id="reviews"> (5054
-                        reviews)</small></h5>
+                <h5>
+                    <a id="brand" href="#"></a>
+                </h5>
 
                 <p>Buy Box Price</p>
-                <h3 style="margin-top:0px;">£<span id="price"></span></h3>
+                <h3>£<span id="price"></span></h3>
+
                 <small>Monthly Sold: <span id="m_sold"></span></small>
-                
+
                 <p>COLOR: <span id="pattern"></span></p>
                 <p>Category: <span id="category"></span></p>
                 <p>EAN: <span id="eanList"></span></p>
-                <p>Dimension: <span id="height"></span> * <span id="width"></span> * <span id="length"></span></p>
+                <p>Dimension: <span id="height"></span> × <span id="width"></span> × <span id="length"></span></p>
                 <p>Weight: <span id="weight"></span></p>
                 <p>Material: <span id="material"></span></p>
+
+                <!-- Pricing Calculation Inputs -->
                 <div class="input-group">
                     <div class="input-field">
                         <label for="cog">Cost</label>
@@ -118,26 +124,26 @@
                         <input type="text" id="profit" readonly />
                     </div>
                 </div>
-               
             </div>
 
-            <div class="col-xs-9">
+            <!-- Tabs Section -->
+            <div class="col-xs-12 mt-3">
                 <ul class="menu-items">
-                <li class="active" data-tab="description">Description</li>
-                <li data-tab="variatons">Variations</li>
+                    <li class="active" data-tab="description">Description</li>
+                    <li data-tab="variations">Variations</li>
                 </ul>
 
                 <div class="tab-content" id="description">
-                <p>This is the description content.</p>
+                    <p>This is the description content.</p>
                 </div>
 
-                <div class="tab-content" id="variatons" style="display:none;">
+                <div class="tab-content" id="variations" style="display: none;">
                     <div id="variation-container" class="variation-inline"></div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
+
     <footer class="text-center">
 
     </footer>
