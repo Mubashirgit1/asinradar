@@ -45,7 +45,11 @@
     border-color: #003049;
 }
 
-
+.btn-outline-success:hover{
+    color: #fff !important;
+    background-color: #d62828 !important;
+    border-color: #d62828 !important;
+}
 /* Crousel */
 .heading-box h2 {
     width: 100%;

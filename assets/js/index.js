@@ -48,18 +48,28 @@ $(document).ready(function () {
       .join('');
   }
 
-  document.getElementById('mainBody').style.display = 'none';
-  document.getElementById('not-found').style.display = 'none';
+  if (document.getElementById('mainBody')) {
+    document.getElementById('mainBody').style.display = 'none';
+  }
+  if (document.getElementById('not-found')) {
+    document.getElementById('not-found').style.display = 'none';
+  }
+  
+
   let isSearching = false;
-  async function handleSearch() {
+  async function handleSearch(search  = null) {
     if (isSearching) return; // prevent double calls
     isSearching = true;
     try {
       // your fetch or $.ajax code
-      const asin = $('#asinInput').val().trim();
+      var asin = $('#asinInput').val().trim();
       if (!asin) {
+        if(search !== null){
+          asin = search;
+        }else{
         alert('Please enter an ASIN');
         return;
+        }
       }
 
       const timestamp = Date.now();
@@ -103,6 +113,15 @@ $(document).ready(function () {
       handleSearch();
     }
   });
+
+  // Get query string from URL
+  const params = new URLSearchParams(window.location.search);
+  const searchValue = params.get('query');
+  if (searchValue) {
+    // Now you can use `searchValue` in your API call or display it
+     handleSearch(searchValue);
+  }
+
 
   function handleKeepaResponse(data) {
     // Clear old content
@@ -204,6 +223,8 @@ $(document).ready(function () {
   }
 
   var inputv = document.getElementById("cog");
-  inputv.addEventListener("input", calculateProfit);
-
+  if(inputv){
+    inputv.addEventListener("input", calculateProfit);
+  }
+  
 });
