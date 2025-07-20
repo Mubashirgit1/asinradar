@@ -1,4 +1,6 @@
 $(document).ready(function () {
+
+  
   $('#slider-animation').on('slid.bs.carousel', function (e) {
     var items = $('#slider-animation .carousel-item');
     var activeIndex = items.index($(e.relatedTarget));
@@ -46,6 +48,8 @@ $(document).ready(function () {
       .join('');
   }
 
+  document.getElementById('mainBody').style.display = 'none';
+  document.getElementById('not-found').style.display = 'none';
   let isSearching = false;
   async function handleSearch() {
     if (isSearching) return; // prevent double calls
@@ -99,8 +103,8 @@ $(document).ready(function () {
     // Clear old content
     document.getElementById("imageContainer").innerHTML = "";
     document.getElementById("variation-container").innerHTML = "";
-
     if (data.asin) {
+      document.getElementById('mainBody').style.display = 'block';
       var title = data.title;
       var price = data.price;
       var profit = 0;
@@ -139,7 +143,9 @@ $(document).ready(function () {
 
       calculateProfit(); // recalculate with new data
     } else {
-      console.log('No product data found.');
+      $("#searchBox").animate({ 'padding-top': "15px" }, 600);
+      $(".container-animate").animate({ height: "20vh" }, 600);
+      document.getElementById('not-found').style.display = 'block';
     }
   }
 
