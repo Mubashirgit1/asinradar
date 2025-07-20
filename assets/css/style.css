@@ -362,9 +362,6 @@ select {
     background: #fff;
     margin: 50px auto;
     text-align: left;
-    
-     
-     
     transition: box-shadow .2s ease-out .2s;
     word-spacing: 2px;
 }
@@ -438,11 +435,6 @@ select {
     box-shadow: 0 0 15px 15px rgba(0, 0, 0, .1);
 }
 
- 
-
-
-
- 
 
 #mainBody {
     font-family: 'Montserrat', sans-serif;
