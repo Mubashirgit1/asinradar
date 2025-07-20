@@ -1,16 +1,16 @@
 $(document).ready(function () {
-  const sharedSecret = 'a9f1c2e741f1cd9e27f839a98fcb82715e4f30c961b879a69f2e13e3a4a6d84b';
+  var sharedSecret = 'a9f1c2e741f1cd9e27f839a98fcb82715e4f30c961b879a69f2e13e3a4a6d84b';
 
-  const navbar = document.getElementById('mainNavbar');
-  const mainBody = document.getElementById('mainBody');
-  const notFound = document.getElementById('not-found');
-  const variationContainer = document.getElementById("variation-container");
+  var navbar = document.getElementById('mainNavbar');
+  var mainBody = document.getElementById('mainBody');
+  var notFound = document.getElementById('not-found');
+  var variationContainer = document.getElementById("variation-container");
 
   let isSearching = false;
 
   $('#slider-animation').on('slid.bs.carousel', function (e) {
-    const items = $('#slider-animation .carousel-item');
-    const activeIndex = items.index($(e.relatedTarget));
+    var items = $('#slider-animation .carousel-item');
+    var activeIndex = items.index($(e.relatedTarget));
     navbar.classList.toggle('navbar-dark-mode', activeIndex === 2);
   });
 
@@ -25,20 +25,20 @@ $(document).ready(function () {
   });
 
   async function generateHMACSignature(secret, timestamp) {
-    const encoder = new TextEncoder();
-    const key = await crypto.subtle.importKey(
+    var encoder = new TextEncoder();
+    var key = await crypto.subtle.importKey(
       'raw',
       encoder.encode(secret),
       { name: 'HMAC', hash: 'SHA-256' },
       false,
       ['sign']
     );
-    const signature = await crypto.subtle.sign('HMAC', key, encoder.encode(timestamp.toString()));
+    var signature = await crypto.subtle.sign('HMAC', key, encoder.encode(timestamp.toString()));
     return Array.from(new Uint8Array(signature)).map(b => b.toString(16).padStart(2, '0')).join('');
   }
 
   function getProductImage(image, asin) {
-    const firstImage = image?.includes(",") ? image.split(',')[0] : image;
+    var firstImage = image?.includes(",") ? image.split(',')[0] : image;
     return firstImage
       ? `https://images-na.ssl-images-amazon.com/images/I/${firstImage}.jpg`
       : `https://images-na.ssl-images-amazon.com/images/P/${asin}.jpg`;
@@ -62,8 +62,8 @@ $(document).ready(function () {
       if (!asin && query !== null) asin = query;
       if (!asin) return alert('Please enter an ASIN');
 
-      const timestamp = Date.now();
-      const signature = await generateHMACSignature(sharedSecret, timestamp);
+      var timestamp = Date.now();
+      var signature = await generateHMACSignature(sharedSecret, timestamp);
 
       $.ajax({
         url: `https://liveprojects.online/asinradar/keepa.php?asin=${asin}`,
@@ -109,7 +109,7 @@ $(document).ready(function () {
       style: "width:300px"
     }));
 
-    const setText = (id, value = "-") => document.getElementById(id).textContent = value;
+    var setText = (id, value = "-") => document.getElementById(id).textContent = value;
     setText("title", data.title);
     setText("brand", data.brand);
     setText("pattern", data.pattern);
@@ -133,9 +133,9 @@ $(document).ready(function () {
 
   function renderVariations(variations) {
     variations.forEach(variant => {
-      const style = variant.attributes[0].value;
-      const imgUrl = getProductImage(variant.image, variant.asin);
-      const item = document.createElement("div");
+      var style = variant.attributes[0].value;
+      var imgUrl = getProductImage(variant.image, variant.asin);
+      var item = document.createElement("div");
       item.className = "variation-item";
       item.innerHTML = `<img src="${imgUrl}" alt="${style}"><div>${style}</div>`;
       variationContainer.appendChild(item);
@@ -143,10 +143,10 @@ $(document).ready(function () {
   }
 
   function calculateProfit() {
-    const salePrice = parseFloat(document.getElementById("price").textContent) || 0;
-    const cost = parseFloat(document.getElementById("cog").value) || 0;
-    const fee = parseFloat(document.getElementById("fba_fee").value) || 0;
-    const profit = salePrice - fee - cost;
+    var salePrice = parseFloat(document.getElementById("price").textContent) || 0;
+    var cost = parseFloat(document.getElementById("cog").value) || 0;
+    var fee = parseFloat(document.getElementById("fba_fee").value) || 0;
+    var profit = salePrice - fee - cost;
     document.getElementById("profit").value = profit.toFixed(2);
   }
 
@@ -161,6 +161,6 @@ $(document).ready(function () {
   document.getElementById("cog")?.addEventListener("input", calculateProfit);
 
   // On page load, check URL params
-  const queryParam = new URLSearchParams(window.location.search).get('query');
+  var queryParam = new URLSearchParams(window.location.search).get('query');
   if (queryParam) handleSearch(queryParam);
 });
