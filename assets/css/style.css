@@ -666,4 +666,21 @@ margin-bottom: 30px;
     object-fit: cover;
   }
 }
+@media screen and (width: 768px) and (height: 1024px) {
+  /* Your custom styles here */
+
+  #slider-animation {
+    width: 100%; 
+    overflow: hidden;
+  }
+  .wow{
+    font-size: 70%;
+  }
+
+  #slider-animation img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
 
