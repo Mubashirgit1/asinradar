@@ -108,6 +108,7 @@ $(document).ready(function () {
     // Clear old content
     document.getElementById("imageContainer").innerHTML = "";
     document.getElementById("variation-container").innerHTML = "";
+    document.getElementById("cog").value = "";
     if (data.asin) {
       document.getElementById('mainBody').style.display = 'block';
       var title = data.title;
