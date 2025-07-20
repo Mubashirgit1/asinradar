@@ -59,6 +59,60 @@ Whether you're an experienced seller or just starting out, ASIN RADAR helps you 
   * [Acknowledgments](#acknowledgments)
 
 ---
+
+## User Experience (UX)
+
+### Initial Discussion
+
+As an Amazon seller,
+I want to enter an ASIN in a simple search field
+So that I can instantly view product data like price, brand, monthly sales, and dimensions
+And calculate potential profit using cost and FBA fees.te.
+
+#### Key information for the site
+
+* Purpose: Quickly analyze Amazon products using ASIN with real-time pricing, sales, and profit estimates.
+
+* Main Features:
+
+* Search by ASIN across all pages
+
+* Instant Buy Box price and monthly sold estimates
+
+* Auto-calculated profit based on FBA fees and cost
+
+* Product details including dimensions, weight, EAN, and material
+
+* Variation preview with images
+
+
+### User Stories
+
+#### Client Goals
+
+* To be able to view the site on a range of device sizes.
+* Allow users to quickly analyze Amazon ASINs for competitive insights.
+* Provide real-time Buy Box pricing, profit estimation, and sales data to help sellers choose winning products.
+* Reduce manual lookup time by integrating Keepa API and automated calculations.
+
+#### First Time Visitor Goals
+
+* I want to find out ASIN Profit.
+* I want to be able to check dimension and other details.
+* I want to be able to find image of product.
+
+#### Returning Visitor Goals
+
+* I want to find up to date information Variation of Product.
+* I want to be able to easily description.
+* I want to be able to search from all app.
+
+#### Frequent Visitor Goals
+
+* I want to be able to search asin find profitable products.
+
+- - -
+
 ### Colour Scheme
 
 Here is the color scheme for the project:
