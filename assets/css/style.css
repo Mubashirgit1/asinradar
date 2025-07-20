@@ -650,7 +650,7 @@ margin-bottom: 30px;
     }
 }
 
-@media screen and (max-width: 1500px) and (max-height: 750px) {
+@media screen and (max-width: 1280px) and (max-height: 802px) {
   #slider-animation {
     width: 100%;
    
@@ -666,3 +666,4 @@ margin-bottom: 30px;
     object-fit: cover;
   }
 }
+
