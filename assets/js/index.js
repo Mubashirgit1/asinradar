@@ -5,7 +5,8 @@ $(document).ready(function () {
   var mainBody = document.getElementById('mainBody');
   var notFound = document.getElementById('not-found');
   var variationContainer = document.getElementById("variation-container");
-
+if (mainBody) mainBody.style.display = 'none';
+    if (notFound) notFound.style.display = 'none';
   let isSearching = false;
 
   $('#slider-animation').on('slid.bs.carousel', function (e) {

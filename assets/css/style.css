@@ -1,12 +1,4 @@
 /* color scheme  */
-.blue-color {
-    background: #003049;
-}
-
-.red-color {
-    background: #d62828 !important;
-
-}
 
 .orange-color {
     background: #f77f00;
@@ -50,10 +42,7 @@
     border-color: #fff !important;
 }
 /* Crousel */
-.heading-box h2 {
-    width: 100%;
-    color: red;
-}
+
 
 .text-box {
     position: absolute;
