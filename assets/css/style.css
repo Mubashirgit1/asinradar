@@ -611,11 +611,6 @@ margin-bottom: 30px;
 
 @media screen and (max-width: 420px) {
 
-    #searchBar,
-    .glyphicon {
-        font-size: 16px;
-    }
-
     #searchBox h1 {
         font-size: 28px;
     }
@@ -625,7 +620,9 @@ margin-bottom: 30px;
     .container {
         margin-top: 0px !important;
     }
-
+    .wow{
+        font-size: 60%;
+    }
     .container>.row {
         padding: 0 !important;
     }
@@ -651,4 +648,21 @@ margin-bottom: 30px;
     .menu-items {
         padding-left: 0;
     }
+}
+
+@media screen and (max-width: 1500px) and (max-height: 750px) {
+  #slider-animation {
+    width: 100%;
+   
+    overflow: hidden;
+  }
+  .wow{
+    font-size: 90%;
+  }
+
+  #slider-animation img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
 }
