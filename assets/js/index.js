@@ -13,6 +13,7 @@ if (mainBody) mainBody.style.display = 'none';
     var items = $('#slider-animation .carousel-item');
     var activeIndex = items.index($(e.relatedTarget));
     navbar.classList.toggle('navbar-dark-mode', activeIndex === 2);
+    
   });
 
   document.querySelectorAll('.menu-items li').forEach(tab => {
