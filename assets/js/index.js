@@ -77,6 +77,11 @@ $(document).ready(function () {
 
         },
         error: function (xhr, status, err) {
+        if (xhr.status === 404) {
+          $("#searchBox").animate({ 'padding-top': "15px" }, 600); 
+          $(".container-animate").animate({ height: "20vh" }, 600);
+          document.getElementById('not-found').style.display = 'block';
+        } else
           $('#result').text('Error: ' + (xhr.responseText || err));
         }
       });
