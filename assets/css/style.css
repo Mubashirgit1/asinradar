@@ -29,7 +29,6 @@
     padding-right: 0px !important;
 }
 
-.custom-nav {}
 
 .btn-outline-success {
     color: #fff;
@@ -48,7 +47,7 @@
 .btn-outline-success:hover{
     color: #fff !important;
     background-color: #d62828 !important;
-    border-color: #d62828 !important;
+    border-color: #fff !important;
 }
 /* Crousel */
 .heading-box h2 {
@@ -226,8 +225,6 @@ PRICING STYLES
     background-color: rgba(0, 0, 0, 0.50);
     border: none;
     border-radius: 0px;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
 }
 
 .db-button-color-square:hover {
@@ -365,9 +362,9 @@ select {
     background: #fff;
     margin: 50px auto;
     text-align: left;
-    -webkit-transition: box-shadow .2s ease-out .2s;
-    -moz-transition: box-shadow .2s ease-out .2s;
-    -o-transition: box-shadow .2s ease-out .2s;
+    
+     
+     
     transition: box-shadow .2s ease-out .2s;
     word-spacing: 2px;
 }
@@ -441,17 +438,11 @@ select {
     box-shadow: 0 0 15px 15px rgba(0, 0, 0, .1);
 }
 
-#searchBox ::-webkit-input-placeholder {
-    color: #bbb;
-    opacity: 1;
-}
+ 
 
 
 
-#searchBox :-ms-input-placeholder {
-    color: #bbb;
-    opacity: 1;
-}
+ 
 
 #mainBody {
     font-family: 'Montserrat', sans-serif;
