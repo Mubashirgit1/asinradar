@@ -1,153 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ASIN Radar</title>
-     <link rel="icon" href="assets/favicon/fav.ico" type="image/x-icon">
-    <meta name="description"
-        content="Discover winning products and maximize your Amazon profits with ASIN Radar. Our powerful product hunting and profit analysis tool helps sellers find high-demand, low-competition items and track performance effortlessly.">
-    <meta name="keywords"
-        content="Amazon product research, ASIN Radar, Amazon profit calculator, product hunting tool, Amazon FBA tools, find profitable products, Amazon seller tools, product research app, best-selling ASINs, Amazon product analytics, Amazon market research, FBA profit analysis, product tracker Amazon, Amazon niche finder, Amazon business tools">
+    <link rel="icon" href="assets/favicon/fav.ico" type="image/x-icon" />
+    <meta
+      name="description"
+      content="Discover winning products and maximize your Amazon profits with ASIN Radar. Our powerful product hunting and profit analysis tool helps sellers find high-demand, low-competition items and track performance effortlessly."
+    />
+    <meta
+      name="keywords"
+      content="Amazon product research, ASIN Radar, Amazon profit calculator, product hunting tool, Amazon FBA tools, find profitable products, Amazon seller tools, product research app, best-selling ASINs, Amazon product analytics, Amazon market research, FBA profit analysis, product tracker Amazon, Amazon niche finder, Amazon business tools"
+    />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
     <!-- Font Awesome 5 CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-
-</head>
-
-<body>
-
-
+  <body>
     <div class="container-fluid orange-color">
-        <!-- Content here -->
-        <div class="container">
+      <!-- Content here -->
+      <div class="container">
+        <nav
+          id="mainNavbar"
+          class="navbar navbar-expand-lg navbar-dark bg-transparent"
+        >
+          <!-- Brand on the left -->
+          <a class="navbar-brand" href="index.html">ASIN RADAR</a>
 
-            <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark bg-transparent">
+          <!-- Toggler for mobile -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarContent"
+            aria-controls="navbarContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-                <!-- Brand on the left -->
-                <a class="navbar-brand" href="index.html">ASIN RADAR</a>
+          <!-- Navbar content -->
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <!-- Menu items -->
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="pricing.html">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="faq.html">FAQ</a>
+              </li>
 
-                <!-- Toggler for mobile -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
-                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+              <li class="nav-item">
+                <a class="nav-link" href="app.html">Free Trial </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+            </ul>
 
-                <!-- Navbar content -->
-                <div class="collapse navbar-collapse " id="navbarContent">
-
-                    <!-- Menu items -->
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="pricing.html">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="faq.html">FAQ</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="app.html">Free Trial </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact Us</a>
-                        </li>
-
-                    </ul>
-
-                    <!-- Search form on the right -->
-                    <form class="form-inline my-2 my-lg-0" action="app.html" id="searchForm">
-                        <input class="form-control mr-sm-2" name="query" id="searchInput" type="text"
-                            placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-
-                </div>
-            </nav>
-        </div>
+            <!-- Search form on the right -->
+            <form
+              class="form-inline my-2 my-lg-0"
+              action="app.html"
+              id="searchForm"
+            >
+              <input
+                class="form-control mr-sm-2"
+                name="query"
+                id="searchInput"
+                type="text"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button
+                class="btn btn-outline-success my-2 my-sm-0"
+                type="submit"
+              >
+                Search
+              </button>
+            </form>
+          </div>
+        </nav>
+      </div>
     </div>
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-12 mt-5 thanks">
-                <h1 class="text-center">Thank You</h1>
-                <h2 class="text-center mb-5">Our Team Contact Back you soon</h2>
-            </div>
+      <div class="row">
+        <div class="col-md-12 mt-5 thanks">
+          <h1 class="text-center">Thank You</h1>
+          <h2 class="text-center mb-5">Our Team Contact Back you soon</h2>
         </div>
+      </div>
     </div>
 
-
     <footer class="container-fluid orange-color py-5">
-        <div class="container">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-6 ">
-                            <div class="logo-part">
-                                <h2 class="w-50 logo-footer">ASIN RADAR</h2>
-                                <p>Track Faster Sell Faster </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 px-4">
-                            <h6>How To Use</h6>
-                            <p>Search Your ASIN And Ean Numbers</p>
-                            <a href="faq.html" class="btn-footer"> More Info </a><br>
-                            <a href="contact.html" class="btn-footer"> Contact Us</a>
-                        </div>
-                    </div>
+              <div class="col-md-6">
+                <div class="logo-part">
+                  <h2 class="w-50 logo-footer">ASIN RADAR</h2>
+                  <p>Track Faster Sell Faster</p>
                 </div>
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-6 px-4">
-                            <h6> Help us</h6>
-                            <div class="row ">
-                                <div class="col-md-6">
-                                    <ul>
-                                        <li> <a href="index.html"> Home</a> </li>
-                                        <li> <a href="pricing.html"> Pricing</a> </li>
-                                        <li> <a href="faq.html"> FAQ</a> </li>
-                                        <li> <a href="app.html"> Free Trial</a> </li>
-                                        <li> <a href="contact.html"> Contact</a> </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 px-4">
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 ">
-                            <h6> Newsletter</h6>
-                            <div class="social">
-                                <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                            </div>
-                            <form class="form-footer my-3" action="thanks.html">
-                                <input type="text" required placeholder="search here...." name="search">
-                                <input type="submit" value="Go">
-                            </form>
-                            <p>Join our mailing list for new updates and announcements. </p>
-                        </div>
-                    </div>
-                </div>
+              </div>
+              <div class="col-md-6 px-4">
+                <h6>How To Use</h6>
+                <p>Search Your ASIN And Ean Numbers</p>
+                <a href="faq.html" class="btn-footer"> More Info </a><br />
+                <a href="contact.html" class="btn-footer"> Contact Us</a>
+              </div>
             </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-6 px-4">
+                <h6>Help us</h6>
+                <div class="row">
+                  <div class="col-md-6">
+                    <ul>
+                      <li><a href="index.html"> Home</a></li>
+                      <li><a href="pricing.html"> Pricing</a></li>
+                      <li><a href="faq.html"> FAQ</a></li>
+                      <li><a href="app.html"> Free Trial</a></li>
+                      <li><a href="contact.html"> Contact</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6 px-4"></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h6>Newsletter</h6>
+                <div class="social">
+                  <a href="#"
+                    ><i class="fab fa-facebook-f" aria-hidden="true"></i
+                  ></a>
+                  <a href="#"
+                    ><i class="fab fa-instagram" aria-hidden="true"></i
+                  ></a>
+                </div>
+                <form class="form-footer my-3" action="thanks.html">
+                  <input
+                    type="text"
+                    required
+                    placeholder="search here...."
+                    name="search"
+                  />
+                  <input type="submit" value="Go" />
+                </form>
+                <p>Join our mailing list for new updates and announcements.</p>
+              </div>
+            </div>
+          </div>
         </div>
-
+      </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
     <script src="assets/js/index.js"></script>
-</body>
-
+  </body>
 </html>

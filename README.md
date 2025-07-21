@@ -126,6 +126,16 @@ Here is the color scheme for the project:
 Resource
 https://coolors.co/user/palettes/6852bea9b6b194000bfbd483
 
+### Typography
+
+Google Fonts was used for the following fonts:
+
+* Merriweather is used for headings on the site. It is a serif font.
+
+* Raleway is used for the body text on the site. It is a sans-serif font.  
+
+* Indie Flower is used on the thank you page for Harrison Fords message. It is a cursive font.
+
 
 ### **Wireframes**
 
