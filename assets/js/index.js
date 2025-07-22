@@ -1,7 +1,7 @@
 $(document).ready(function () {
+  // random hash secret key 
   var sharedSecret =
     "a9f1c2e741f1cd9e27f839a98fcb82715e4f30c961b879a69f2e13e3a4a6d84b";
-
   var navbar = document.getElementById("mainNavbar");
   var mainBody = document.getElementById("mainBody");
   var notFound = document.getElementById("not-found");
@@ -10,12 +10,14 @@ $(document).ready(function () {
   if (notFound) notFound.style.display = "none";
   let isSearching = false;
 
+  // handle the 3rd slider navigation font color black
   $("#slider-animation").on("slid.bs.carousel", function (e) {
     var items = $("#slider-animation .carousel-item");
     var activeIndex = items.index($(e.relatedTarget));
     navbar.classList.toggle("navbar-dark-mode", activeIndex === 2);
   });
 
+  // Variation and description tabs 
   document.querySelectorAll(".menu-items li").forEach((tab) => {
     tab.addEventListener("click", () => {
       document
@@ -29,7 +31,7 @@ $(document).ready(function () {
       document.getElementById(tab.dataset.tab).style.display = "block";
     });
   });
-
+// function for creating hash string with Crypto Library using timestamp 
   async function generateHMACSignature(secret, timestamp) {
     var encoder = new TextEncoder();
     var key = await crypto.subtle.importKey(
@@ -48,14 +50,14 @@ $(document).ready(function () {
       .map((b) => b.toString(16).padStart(2, "0"))
       .join("");
   }
-
+//provide product and variations images url
   function getProductImage(image, asin) {
     var firstImage = image?.includes(",") ? image.split(",")[0] : image;
     return firstImage
       ? `https://images-na.ssl-images-amazon.com/images/I/${firstImage}.jpg`
       : `https://images-na.ssl-images-amazon.com/images/P/${asin}.jpg`;
   }
-
+// function clear user interface for next request
   function clearUI() {
     if (mainBody) mainBody.style.display = "none";
     if (notFound) notFound.style.display = "none";
@@ -63,7 +65,7 @@ $(document).ready(function () {
     variationContainer.innerHTML = "";
     document.getElementById("cog").value = "";
   }
-
+// Generate Ajax Request and error handling of response
   async function handleSearch(query = null) {
     if (isSearching) return;
     isSearching = true;
@@ -105,7 +107,7 @@ $(document).ready(function () {
       isSearching = false;
     }
   }
-
+// Display response of Request a 
   function renderProduct(data) {
     if (!data.asin) {
       animateUI();
@@ -149,7 +151,7 @@ $(document).ready(function () {
     if (data.variation) renderVariations(data.variation);
     calculateProfit();
   }
-
+// loop function on variations of product
   function renderVariations(variations) {
     variations.forEach((variant) => {
       var style = variant.attributes[0].value;
@@ -160,7 +162,7 @@ $(document).ready(function () {
       variationContainer.appendChild(item);
     });
   }
-
+// profit calculate 
   function calculateProfit() {
     var salePrice =
       parseFloat(document.getElementById("price").textContent) || 0;
@@ -169,7 +171,7 @@ $(document).ready(function () {
     var profit = salePrice - fee - cost;
     document.getElementById("profit").value = profit.toFixed(2);
   }
-
+// after search animate search bar
   function animateUI() {
     $("#searchBox").animate({ "padding-top": "15px" }, 600);
     $(".container-animate").animate({ height: "20vh" }, 600);
