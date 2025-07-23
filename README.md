@@ -16,7 +16,6 @@ Whether you're an experienced seller or just starting out, ASIN RADAR helps you 
 
 ![ASIN RADAR Website shown on a range of devices](assets/images/responsive/responsive-1.png)
 
-
 [View ASIN RADAR on Github Pages](https://mubashirgit1.github.io/asinradar/)
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/Mubashirgit1/asinradar?color=red)
@@ -24,40 +23,47 @@ Whether you're an experienced seller or just starting out, ASIN RADAR helps you 
 ![GitHub language count](https://img.shields.io/github/languages/count/Mubashirgit1/asinradar?color=yellow)
 ![GitHub top language](https://img.shields.io/github/languages/top/Mubashirgit1/asinradar?color=green)
 ![W3C Validation](https://img.shields.io/w3c-validation/html?color=blueviolet&targetUrl=https%3A%2F%2Fmubashirgit1.github.io%2Fasinradar)
+
 ---
+
 ## CONTENTS
 
-* [User Experience](#user-experience-ux)
-  * [User Stories](#user-stories)
+- [User Experience](#user-experience-ux)
 
-* [Design](#design)
-  * [Colour Scheme](#colour-scheme)
-  * [Typography](#typography)
-  * [Imagery](#imagery)
-  * [Wireframes](#wireframes)
+  - [User Stories](#user-stories)
 
-* [Features](#features)
-  * [General Features on Each Page](#general-features-on-each-page)
-  * [Future Implementations](#future-implementations)
-  * [Accessibility](#accessibility)
+- [Design](#design)
 
-* [Technologies Used](#technologies-used)
-  * [Languages Used](#languages-used)
-  * [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used)
+  - [Colour Scheme](#colour-scheme)
+  - [Typography](#typography)
+  - [Imagery](#imagery)
+  - [Wireframes](#wireframes)
 
-* [Deployment & Local Development](#deployment--local-development)
-  * [Deployment](#deployment)
-  * [Local Development](#local-development)
-    * [How to Fork](#how-to-fork)
-    * [How to Clone](#how-to-clone)
+- [Features](#features)
 
-* [Testing](#testing)
+  - [General Features on Each Page](#general-features-on-each-page)
+  - [Future Implementations](#future-implementations)
+  - [Accessibility](#accessibility)
 
-* [Credits](#credits)
-  * [Code Used](#code-used)
-  * [Content](#content)
-  * [Media](#media)
-  * [Acknowledgments](#acknowledgments)
+- [Technologies Used](#technologies-used)
+
+  - [Languages Used](#languages-used)
+  - [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used)
+
+- [Deployment & Local Development](#deployment--local-development)
+
+  - [Deployment](#deployment)
+  - [Local Development](#local-development)
+    - [How to Fork](#how-to-fork)
+    - [How to Clone](#how-to-clone)
+
+- [Testing](#testing)
+
+- [Credits](#credits)
+  - [Code Used](#code-used)
+  - [Content](#content)
+  - [Media](#media)
+  - [Acknowledgments](#acknowledgments)
 
 ---
 
@@ -72,51 +78,51 @@ And calculate potential profit using cost and FBA fees.te.
 
 #### Key information for the site
 
-* Purpose: Quickly analyze Amazon products using ASIN with real-time pricing, sales, and profit estimates.
+- Purpose: Quickly analyze Amazon products using ASIN with real-time pricing, sales, and profit estimates.
 
-* Main Features:
+- Main Features:
 
-* Search by ASIN across all pages
+- Search by ASIN across all pages
 
-* Instant Buy Box price and monthly sold estimates
+- Instant Buy Box price and monthly sold estimates
 
-* Auto-calculated profit based on FBA fees and cost
+- Auto-calculated profit based on FBA fees and cost
 
-* Product details including dimensions, weight, EAN, and material
+- Product details including dimensions, weight, EAN, and material
 
-* Variation preview with images
-
+- Variation preview with images
 
 ### User Stories
 
 #### Client Goals
 
-* To be able to view the site on a range of device sizes.
-* Allow users to quickly analyze Amazon ASINs for competitive insights.
-* Provide real-time Buy Box pricing, profit estimation, and sales data to help sellers choose winning products.
-* Reduce manual lookup time by integrating Keepa API and automated calculations.
+- To be able to view the site on a range of device sizes.
+- Allow users to quickly analyze Amazon ASINs for competitive insights.
+- Provide real-time Buy Box pricing, profit estimation, and sales data to help sellers choose winning products.
+- Reduce manual lookup time by integrating Keepa API and automated calculations.
 
 #### First Time Visitor Goals
 
-* I want to find out ASIN Profit.
-* I want to be able to check dimension and other details.
-* I want to be able to find image of product.
+- I want to find out ASIN Profit.
+- I want to be able to check dimension and other details.
+- I want to be able to find image of product.
 
 #### Returning Visitor Goals
 
-* I want to find up to date information Variation of Product.
-* I want to be able to easily description.
-* I want to be able to search from all app.
+- I want to find up to date information Variation of Product.
+- I want to be able to easily description.
+- I want to be able to search from all app.
 
 #### Frequent Visitor Goals
 
-* I want to be able to search asin find profitable products.
+- I want to be able to search asin find profitable products.
 
-- - -
+---
 
 ### Colour Scheme
 
 Here is the color scheme for the project:
+
 - **Prussian Blue**: `#003049ff`
 - **Fire Engine Red**: `#d62828ff`
 - **Orange Wheel**: `#f77f00ff`
@@ -153,9 +159,7 @@ Our homepage slider consists of three responsive slides, each designed to highli
 
 All slider images were custom-designed using ChatGPT assistance and integrated into a Bootstrap carousel.
 
-
 ### **Wireframes**
-
 
 The initial design and layout of this project were conceptualized using Figma. These wireframes served as the foundation for the UI/UX structure, ensuring a clear visual direction before development began.
 
@@ -165,83 +169,90 @@ The initial design and layout of this project were conceptualized using Figma. T
 
 Click to view the **website wireframes** [here](https://www.figma.com/design/4mJYRwrJnmsoifzWiK1tJQ/ASIN-RADAR?node-id=0-1&m=dev&t=gptwWji70jXKvfB0-1).
 
-Home Page 
-![ASIN RADAR Website wireframes](assets/wireframe/home.png)
+Home Page
+![ASIN RADAR Website Main Page](assets/wireframe/home.png)
 Pricing
-![ASIN RADAR Website wireframes](assets/wireframe/pricing.png)
+![ASIN RADAR Website Pricing](assets/wireframe/pricing.png)
 Frequently Asked Questions
-![ASIN RADAR Website wireframes](assets/wireframe/faq.png)
+![ASIN RADAR Website FAQ](assets/wireframe/faq.png)
 Search
-![ASIN RADAR Website wireframes](assets/wireframe/search.png)
+![ASIN RADAR Website Search](assets/wireframe/search.png)
 After Search
-![ASIN RADAR Website wireframes](assets/wireframe/application.png)
+![ASIN RADAR Website Application](assets/wireframe/application.png)
 Contact Us
-![ASIN RADAR Website wireframes](assets/wireframe/contact-us.png)
+![ASIN RADAR Website Contact us](assets/wireframe/contact-us.png)
 
 ### Features
 
-The website is contain Home page, a Pricing page, a FAQ page, a Contact us page, a thank you page  & a search Page page.
+The website is contain Home page, a Pricing page, a FAQ page, a Contact us page, a thank you page & a search Page page.
 
 All Pages on the website are responsive and have:
 
 #### Favicon
 
-* A favicon in the browser tab.
+- A favicon in the browser tab.
 
   ![favicon](assets/favicon/tab-pic.png)
 
-  * The navigation of the site at the top of every page. link to all pages each other click on logo back to home page.
-  - Home page Navigation is transparent background top of slider 
-  - on last slider navigation color change to balck using jquery sort the color combination 
+  - The navigation of the site at the top of every page. link to all pages each other click on logo back to home page.
+
+  * Home page Navigation is transparent background top of slider
+  * on last slider navigation color change to balck using jquery sort the color combination
 
 #### Navigation
 
-  ![home-nav](assets/documentation/nav/home.png)
+![home-nav](assets/documentation/nav/home.png)
 
-  * Navigation of All Other pages same have search on where user search asin as well.
-  - Home page Navigation is transparent background top of slider 
-  
-  ![home-nav](assets/documentation/nav/other.png)
+- Navigation of All Other pages same have search on where user search asin as well.
+
+* Home page Navigation is transparent background top of slider
+
+![home-nav](assets/documentation/nav/other.png)
 
 #### Homepage Slider
 
 The homepage features a responsive carousel slider designed to visually communicate the core value propositions of the ASIN RADAR platform. Each slide combines strong messaging with thematic imagery that reinforces the platform's benefits for Amazon sellers.
 
 - **Slider Overview**:
+
 1. Track Amazon Fees, Profit & Product Performance
+
 - Showcases the ASIN RADAR logo and Amazon-themed icons, emphasizing real-time tracking and performance analytics.
 
 ![home slider](assets/documentation/slider/pc.png)
 
 2. Simplify Your Amazon Business Insights
+
 - Uses a visual of an Amazon shopping basket to highlight how ASIN RADAR makes seller data easy to understand and act on.
 
 ![home slider](assets/documentation/slider/amazon.png)
 
 3. Powerful Tools for Smart Amazon Sellers
+
 - Displays themed design layers and visual elements aligned with ASIN RADAR branding, positioning the platform as a professional toolkit for serious sellers.
 
 ![home slider](assets/documentation/slider/layer.png)
 
 - **Built With**:
-Bootstrap Carousel (.carousel, .carousel-item)
+  Bootstrap Carousel (.carousel, .carousel-item)
 
 Responsive Images with full-width scaling (img-fluid, w-100)
 
-Custom Text Animations using WOW.js and CSS transitions for engaging headlines 
+Custom Text Animations using WOW.js and CSS transitions for engaging headlines
 
-
-#### App features 
+#### App features
 
 1. What the App Does
 2. Key features
 3. Security & Performance
 4. Flexible Pricing Plans
 
-#### Footer Structure 
+#### Footer Structure
+
 The footer of the ASIN RADAR website is designed to provide quick access to essential links, contact details, and engagement options. The layout follows a right-to-left hierarchy, making key information immediately accessible and enhancing usability.
 
 🧭 Footer Content (Right to Left):
+
 1. Logo and Slogan
 
 Positioned at the far right of the footer.
@@ -282,54 +293,54 @@ Display all pricing options for user with details
 
 Discover a plan that fits your needs — simple, transparent, and affordable.
 
-| Plan         | Price/Month | Devices      | Request Limit       | Support   |
-|--------------|-------------|--------------|----------------------|-----------|
-| **Small**    | £23         | 2 Device Logins   | 5 Requests / minute   | 24/7 Support |
-| **Medium**   | £35         | 5 Device Logins   | 10 Requests / minute  | 24/7 Support |
-| **Advance**  | £49         | 10 Device Logins  | 100 Requests / minute | 24/7 Support |
+| Plan        | Price/Month | Devices          | Request Limit         | Support      |
+| ----------- | ----------- | ---------------- | --------------------- | ------------ |
+| **Small**   | £23         | 2 Device Logins  | 5 Requests / minute   | 24/7 Support |
+| **Medium**  | £35         | 5 Device Logins  | 10 Requests / minute  | 24/7 Support |
+| **Advance** | £49         | 10 Device Logins | 100 Requests / minute | 24/7 Support |
 
 #### FAQ Page
 
-Write down some common questions most of suer asked us 
+Write down some common questions most of suer asked us
 
 1. What is ASIN Radar?
-ASIN Radar is a tool designed to help Amazon sellers track and monitor ASINs for price changes, stock status, and listing updates in real time.
+   ASIN Radar is a tool designed to help Amazon sellers track and monitor ASINs for price changes, stock status, and listing updates in real time.
 
 2. How do I add an ASIN to track?
-Simply log in to your ASIN Radar account, navigate to your dashboard, click Add ASIN, enter the ASIN, and set your alerts.
+   Simply log in to your ASIN Radar account, navigate to your dashboard, click Add ASIN, enter the ASIN, and set your alerts.
 
 3. Is ASIN Radar free to use?
-It offers both free and premium plans. The free plan includes basic tracking; the premium plan adds advanced alerts, historical data, and competitor analysis.
+   It offers both free and premium plans. The free plan includes basic tracking; the premium plan adds advanced alerts, historical data, and competitor analysis.
 
 4. How often is ASIN data updated?
-Premium users get near real-time updates; free users get updates every 6 hours.
+   Premium users get near real-time updates; free users get updates every 6 hours.
 
 5. What data does this app provide?
-It shows Amazon product details including Buy Box price, monthly sales estimates, product dimensions, FBA fees, and variations to help you make informed decisions.
+   It shows Amazon product details including Buy Box price, monthly sales estimates, product dimensions, FBA fees, and variations to help you make informed decisions.
 
 6. Does ASIN Radar support international Amazon marketplaces?
-No—currently it only supports Amazon UK.
+   No—currently it only supports Amazon UK.
 
 7. How often can I make API requests?
-You can make up to 60 API calls per day, to ensure fair usage.
+   You can make up to 60 API calls per day, to ensure fair usage.
 
 8. Is my data secure?
-Yes—we use secure HMAC authentication and keep sensitive information on the backend for your protection.
+   Yes—we use secure HMAC authentication and keep sensitive information on the backend for your protection.
 
 9. Can I calculate profit with this app?
-Yes! Enter your cost and FBA fees to calculate estimated profit directly in the app.
+   Yes! Enter your cost and FBA fees to calculate estimated profit directly in the app.
 
 10. Does the app support product variations?
-Yes—it displays all available variations with images and attributes for easy comparison.
+    Yes—it displays all available variations with images and attributes for easy comparison.
 
 11. What happens if a product doesn’t have a Buy Box price?
-The app will clearly indicate when the Buy Box price is unavailable so you're aware of the product’s status.
+    The app will clearly indicate when the Buy Box price is unavailable so you're aware of the product’s status.
 
 12. Can I use this app on mobile devices?
-Yes—the interface is responsive and optimized for both desktop and mobile.
+    Yes—the interface is responsive and optimized for both desktop and mobile.
 
 13. How do I handle errors or missing data?
-The app includes error handling to inform you gracefully if data is missing or an API call fails, ensuring a smooth experience.
+    The app includes error handling to inform you gracefully if data is missing or an API call fails, ensuring a smooth experience.
 
 #### Search Page
 
@@ -341,49 +352,46 @@ Enter the ASIN into our search interface.
 
 The tool will return comprehensive product details fetched from Amazon.
 
-
 **Product Details Provided**
 
 When you provide an ASIN, the tool returns the following data:
 
-| Data Point               | Description                                              |
-|--------------------------|----------------------------------------------------------|
-| Product Image            | Main product image                                       |
-| Title                    | Full product title                                      |
-| Brand Name               | Manufacturer or brand name                              |
-| Buy Box Price            | Current Buy Box price                                   |
-| Monthly Sold             | Estimated number of units sold per month               |
-| Color                    | Product color(s)                                        |
-| Category                 | Amazon product category                                 |
-| EAN Number               | European Article Number (if available)                  |
-| Dimensions               | Width × Height × Length                                 |
-| Material                 | Primary material(s) of the product                      |
-| FBA Fee Calculator       | Estimated Fulfillment by Amazon (FBA) fees              |
-| Description              | Detailed product description                             |
-| Variations               | Available product variations (e.g., size, color options) |
-
-
+| Data Point         | Description                                              |
+| ------------------ | -------------------------------------------------------- |
+| Product Image      | Main product image                                       |
+| Title              | Full product title                                       |
+| Brand Name         | Manufacturer or brand name                               |
+| Buy Box Price      | Current Buy Box price                                    |
+| Monthly Sold       | Estimated number of units sold per month                 |
+| Color              | Product color(s)                                         |
+| Category           | Amazon product category                                  |
+| EAN Number         | European Article Number (if available)                   |
+| Dimensions         | Width × Height × Length                                  |
+| Material           | Primary material(s) of the product                       |
+| FBA Fee Calculator | Estimated Fulfillment by Amazon (FBA) fees               |
+| Description        | Detailed product description                             |
+| Variations         | Available product variations (e.g., size, color options) |
 
 **API Response (JSON)**
 
 {
-  "asin": "B07PGL2ZSL",
-  "title": "Example Product Title",
-  "brand": "Example Brand",
-  "buy_box_price": "$29.99",
-  "monthly_sold": 150,
-  "color": "Black",
-  "category": "Electronics",
-  "ean": "1234567890123",
-  "dimensions": "10x5x2 inches",
-  "material": "Plastic",
-  "fba_fee": "$4.50",
-  "description": "This is an example product description...",
-  "variations": [
-    {"color": "Black", "asin": "B07PGL2ZSL"},
-    {"color": "White", "asin": "B07PGL2ZSM"}
-  ],
-  "product_image": "B07PGL2ZSM.jpg",
+"asin": "B07PGL2ZSL",
+"title": "Example Product Title",
+"brand": "Example Brand",
+"buy_box_price": "$29.99",
+"monthly_sold": 150,
+"color": "Black",
+"category": "Electronics",
+"ean": "1234567890123",
+"dimensions": "10x5x2 inches",
+"material": "Plastic",
+"fba_fee": "$4.50",
+"description": "This is an example product description...",
+"variations": [
+{"color": "Black", "asin": "B07PGL2ZSL"},
+{"color": "White", "asin": "B07PGL2ZSM"}
+],
+"product_image": "B07PGL2ZSM.jpg",
 }
 
 #### Contact us Page
@@ -421,10 +429,10 @@ These features aim to enhance your selling strategy by delivering more comprehen
 
 I have been mindful during coding to ensure that the website is as accessible friendly as possible. This has been have achieved by:
 
-* Using semantic HTML.
-* Using a hover state on all buttons on the site to make it clear to the user if they are hovering over a button.
-* Choosing a sans serif font for the site - these fonts are suitable for people with dyslexia.
-* Ensuring that there is a sufficient colour contrast throughout the site.
+- Using semantic HTML.
+- Using a hover state on all buttons on the site to make it clear to the user if they are hovering over a button.
+- Choosing a sans serif font for the site - these fonts are suitable for people with dyslexia.
+- Ensuring that there is a sufficient colour contrast throughout the site.
 
 ## Technologies Used
 
@@ -434,36 +442,35 @@ HTML, CSS, Javascript
 
 ### Frameworks, Libraries & Programs Used
 
-* [Figma](https://www.figma.com/design) - Used to create wireframes.
+- [Figma](https://www.figma.com/design) - Used to create wireframes.
 
-* [keepa](https://keepa.com/) - Used to call api data from Amazon .
+- [keepa](https://keepa.com/) - Used to call api data from Amazon .
 
-* [Git](https://git-scm.com/) - For version control.
+- [Git](https://git-scm.com/) - For version control.
 
-* [Github](https://github.com/) - To save and store the files for the website.
+- [Github](https://github.com/) - To save and store the files for the website.
 
-* [Chat GPT](https://chatgpt.com/) - Creating my slider Images amd help for content writing.
+- [Chat GPT](https://chatgpt.com/) - Creating my slider Images amd help for content writing.
 
-* [Font Awesome](https://fonts.google.com/) - To import the fonts used on the website.
+- [Font Awesome](https://fonts.google.com/) - To import the fonts used on the website.
 
-* [jQuery](https://jquery.com/) - A JavaScript library.
+- [jQuery](https://jquery.com/) - A JavaScript library.
 
-* [Google Developer Tools](https://developers.google.com/web/tools) - To troubleshoot and test features, solve issues with responsiveness and styling.
+- [Google Developer Tools](https://developers.google.com/web/tools) - To troubleshoot and test features, solve issues with responsiveness and styling.
 
-* [TinyPNG](https://tinypng.com/) To compress images
+- [TinyPNG](https://tinypng.com/) To compress images
 
-* [Birme](https://www.birme.net/) To resize images and convert to webp format.
+- [Birme](https://www.birme.net/) To resize images and convert to webp format.
 
-* [Favicon.io](https://favicon.io/) To create favicon.
+- [Favicon.io](https://favicon.io/) To create favicon.
 
-* [Am I Responsive?](http://ami.responsivedesign.is/) To show the website image on a range of devices.
+- [Am I Responsive?](http://ami.responsivedesign.is/) To show the website image on a range of devices.
 
-* [Shields.io](https://shields.io/) To add badges to the README
+- [Shields.io](https://shields.io/) To add badges to the README
 
-* [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa) - a google chrome extension to enable you to view JSON as raw data or parsed.
+- [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa) - a google chrome extension to enable you to view JSON as raw data or parsed.
 
-* [Webpage Spell-Check](https://chrome.google.com/webstore/detail/webpage-spell-check/mgdhaoimpabdhmacaclbbjddhngchjik/related) - a google chrome extension that allows you to spell check your webpage. Used to check the site and the readme for spelling errors.
-
+- [Webpage Spell-Check](https://chrome.google.com/webstore/detail/webpage-spell-check/mgdhaoimpabdhmacaclbbjddhngchjik/related) - a google chrome extension that allows you to spell check your webpage. Used to check the site and the readme for spelling errors.
 
 ## Deployment & Local Development
 
@@ -503,47 +510,48 @@ To clone the repository:
 ## Testing
 
 Please refer to [TESTING.md](TESTING.md) file for all testing carried out.
-- - -
+
+---
 
 ### Solved Bugs
 
-| No | Bug | How I solved the issue |
-| :--- | :--- | :--- |
-| 1 | An error was displaying in the console when next was clicked after the first question, stating that results wasn't defined. | Data was defined in the callApi(), so couldn't be accessed as it was in local scope rather than global scope. By defining data globally and then passing the data as a parameter into the getQuestion() in the nextQuestion() solved this. |
-| 2 | The Questions being pulled in from the JSON have HTML entity characters that are not escaped and therefore display incorrectly with symbols in place of the correct characters. ![Characters not escaping correctly in the JSON data](documentation/characters-not-escaped.webp) | After a lot of research into escaping characters, I came across a post on slack that mentioned using innerHTML rather than innerText. Once I changed the answers to innerHTML the characters are now displaying correctly. |
-| 3 | I have the local storage set up to save the final score as mostRecentScore. However when completing a game and submitting the team name the score added to the high scores section would be the previous score and not the most recent score. | After a lot of research to try and find out why this was happening I went over the code again and decided to see if I changed mostRecentScore in the scoreLog to score it would make a difference. By changing this, I have solved the issue and it now pulls the most recent score achieved. |
-| 4 | Players were able to select an answer which would then display whether correct or incorrect. However they could still click on the answers which meant they could click all the answers to receive the points.| I researched a way to disable the buttons and initially found that I could use answer1.disabled = true; This worked, however it added quite a bit of code, as I had to add this for each button. Further research led me to find [this article](https://blog.revillweb.com/jquery-disable-button-disabling-and-enabling-buttons-with-jquery-5e3ffe669ece) which showed how to use jQuery and the class on the buttons to enable and disable them all at the same time. This then allows me to enable the buttons when a new question has been populated and once a selection has been made, the answer buttons are disabled until the user clicks next to advance onto the next question. |
-| 5 | There was an issue with the data-correct not always being removed correctly from questions, which meant that incorrect answers were displaying as correct | I changed the way the data-correct attribute was removed from the answers, by using the same a for loop similar to what was used to add the data-correct attribute. I also changed the for innerText in the for loop to be innerHTML so that it was correctly reading the same as what was displayed on the button. |
-| 6 | If a user selected an incorrect answer and the correct answer contained HTML entity characters (such as /&#(\d+);/g) the correct button styling would not be applied to the displayCorrectAnswer variable and a error would display in the console. This would then prevent the user from progressing in the quiz as the next button would not display for them to move on.![Bug 6](documentation/bug-6.png) | I adjusted line 161 to use innerHTML rather than innerText, however the issue persisted. I looked for an answer online but struggled to find anything that would help. I then reached out to Bim Williams on Slack who is an alumni on the course and asked to run the problem past him. He suggested adding a function that would decode the HTML entity and then apply that function within line 161. The function takes the HTML entity characters and replaces them with the correct characters. I will be researching this topic further in my spare time to gain a deeper understanding of it. |
+| No  | Bug                                                                                                                                                                                                                                                                                                                                                                                                          | How I solved the issue                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| :-- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | An error was displaying in the console when next was clicked after the first question, stating that results wasn't defined.                                                                                                                                                                                                                                                                                  | Data was defined in the callApi(), so couldn't be accessed as it was in local scope rather than global scope. By defining data globally and then passing the data as a parameter into the getQuestion() in the nextQuestion() solved this.                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| 2   | The Questions being pulled in from the JSON have HTML entity characters that are not escaped and therefore display incorrectly with symbols in place of the correct characters. ![Characters not escaping correctly in the JSON data](documentation/characters-not-escaped.webp)                                                                                                                             | After a lot of research into escaping characters, I came across a post on slack that mentioned using innerHTML rather than innerText. Once I changed the answers to innerHTML the characters are now displaying correctly.                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| 3   | I have the local storage set up to save the final score as mostRecentScore. However when completing a game and submitting the team name the score added to the high scores section would be the previous score and not the most recent score.                                                                                                                                                                | After a lot of research to try and find out why this was happening I went over the code again and decided to see if I changed mostRecentScore in the scoreLog to score it would make a difference. By changing this, I have solved the issue and it now pulls the most recent score achieved.                                                                                                                                                                                                                                                                                                                                                                                             |
+| 4   | Players were able to select an answer which would then display whether correct or incorrect. However they could still click on the answers which meant they could click all the answers to receive the points.                                                                                                                                                                                               | I researched a way to disable the buttons and initially found that I could use answer1.disabled = true; This worked, however it added quite a bit of code, as I had to add this for each button. Further research led me to find [this article](https://blog.revillweb.com/jquery-disable-button-disabling-and-enabling-buttons-with-jquery-5e3ffe669ece) which showed how to use jQuery and the class on the buttons to enable and disable them all at the same time. This then allows me to enable the buttons when a new question has been populated and once a selection has been made, the answer buttons are disabled until the user clicks next to advance onto the next question. |
+| 5   | There was an issue with the data-correct not always being removed correctly from questions, which meant that incorrect answers were displaying as correct                                                                                                                                                                                                                                                    | I changed the way the data-correct attribute was removed from the answers, by using the same a for loop similar to what was used to add the data-correct attribute. I also changed the for innerText in the for loop to be innerHTML so that it was correctly reading the same as what was displayed on the button.                                                                                                                                                                                                                                                                                                                                                                       |
+| 6   | If a user selected an incorrect answer and the correct answer contained HTML entity characters (such as /&#(\d+);/g) the correct button styling would not be applied to the displayCorrectAnswer variable and a error would display in the console. This would then prevent the user from progressing in the quiz as the next button would not display for them to move on.![Bug 6](documentation/bug-6.png) | I adjusted line 161 to use innerHTML rather than innerText, however the issue persisted. I looked for an answer online but struggled to find anything that would help. I then reached out to Bim Williams on Slack who is an alumni on the course and asked to run the problem past him. He suggested adding a function that would decode the HTML entity and then apply that function within line 161. The function takes the HTML entity characters and replaces them with the correct characters. I will be researching this topic further in my spare time to gain a deeper understanding of it.                                                                                      |
 
 ### Known Bugs
 
-* When viewing on screens that use touch rather than a cursor, the colour change for the answer button selected is not immediately obvious as the hover state remains on the button. If the user clicks away from the button the colour can then been seen.
+- When viewing on screens that use touch rather than a cursor, the colour change for the answer button selected is not immediately obvious as the hover state remains on the button. If the user clicks away from the button the colour can then been seen.
 
   ![Touch Button Colour](documentation/touch-button-colour.gif)
 
-* There is a a warning displaying in the console on the live page. This error seems to be because GitHub hosted pages disable googles 3rd party cookie alternative FLoC, which then throws this error. The error doesn't affect the site in any way.
+- There is a a warning displaying in the console on the live page. This error seems to be because GitHub hosted pages disable googles 3rd party cookie alternative FLoC, which then throws this error. The error doesn't affect the site in any way.
 
   ![Console warning](documentation/interest-cohort-error.png)
 
-* When friends tested the site they found that very rarely a game will get stuck on a question, and it will not populate a new question but the question no counter continues to increase. This issue only seems to be if a large number of games are played consecutively, possibly using up the questions in the API. I have not been able to replicate this issue to troubleshoot further.
+- When friends tested the site they found that very rarely a game will get stuck on a question, and it will not populate a new question but the question no counter continues to increase. This issue only seems to be if a large number of games are played consecutively, possibly using up the questions in the API. I have not been able to replicate this issue to troubleshoot further.
   ![Question overloaded](documentation/questions-depleted.gif)
 
-- - -
+---
 
 ## Credits
 
 ### Code Used
 
-* I used [this You Tube tutorial](https://www.youtube.com/watch?v=XH5OW46yO8I) to learn how to create a modal for the how to play section.
+- I used [this You Tube tutorial](https://www.youtube.com/watch?v=XH5OW46yO8I) to learn how to create a modal for the how to play section.
 
-* As the API I used for the questions declared the correct answer and then had an array of incorrect answers, I had to find a way to shuffle the answers together so that the correct answer wouldn't always appear on the same button. Research led me to the Fisher-Yates Shuffle. Other methods of shuffling can favour some items in the array more than others, however the Fisher Yates Shuffle allows for a more even spread of probability of the answer being placed on each button. I used the following [YouTube tutorial](https://www.youtube.com/watch?v=eATLMjs7y4s&list=PL5egNEXQTWmFHAoWFVRLNAvD-9zzyWVxA&index=3) to further adapt the shuffle I had researched on W3Schools to work with the data I had.
+- As the API I used for the questions declared the correct answer and then had an array of incorrect answers, I had to find a way to shuffle the answers together so that the correct answer wouldn't always appear on the same button. Research led me to the Fisher-Yates Shuffle. Other methods of shuffling can favour some items in the array more than others, however the Fisher Yates Shuffle allows for a more even spread of probability of the answer being placed on each button. I used the following [YouTube tutorial](https://www.youtube.com/watch?v=eATLMjs7y4s&list=PL5egNEXQTWmFHAoWFVRLNAvD-9zzyWVxA&index=3) to further adapt the shuffle I had researched on W3Schools to work with the data I had.
 
 As the JavaScript modules of the Code Institute Diploma did not cover local storage, I had to do a bit of research into this topic myself in order to set up the high scores section of my site.
 
-* I used this [video tutorial](https://www.youtube.com/watch?v=DFhmNLKwwGw&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx&index=9) on YouTube by [James Q Quick](https://www.youtube.com/channel/UC-T8W79DN6PBnzomelvqJYw) which taught me to save the team name and score to an object, that would then be saved into an array in local storage. It also explained how to sort the items in the array into descending score order, and then to splice the array, I have used the MAX_HIGH_SCORES as my point to splice.
+- I used this [video tutorial](https://www.youtube.com/watch?v=DFhmNLKwwGw&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx&index=9) on YouTube by [James Q Quick](https://www.youtube.com/channel/UC-T8W79DN6PBnzomelvqJYw) which taught me to save the team name and score to an object, that would then be saved into an array in local storage. It also explained how to sort the items in the array into descending score order, and then to splice the array, I have used the MAX_HIGH_SCORES as my point to splice.
 
-* I used this [video tutorial](https://www.youtube.com/watch?v=jfOv18lCMmw&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx&index=10) on YouTube by [James Q Quick](https://www.youtube.com/channel/UC-T8W79DN6PBnzomelvqJYw) to learn how to insert the local storage into the high scores page.
+- I used this [video tutorial](https://www.youtube.com/watch?v=jfOv18lCMmw&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx&index=10) on YouTube by [James Q Quick](https://www.youtube.com/channel/UC-T8W79DN6PBnzomelvqJYw) to learn how to insert the local storage into the high scores page.
 
 ### Content
 
@@ -559,14 +567,14 @@ All other content for the site, such as introduction messages and instructions w
 
 I would like to acknowledge the following people:
 
-* Adegbenga  Adeye - My Code Institute Mentor.
+- Adegbenga Adeye - My Code Institute Mentor.
 
-* Bim Williams - For being a great sounding board for me when I faced issues with moving onto the next question in the quiz, and for helping solve the issue faced with the HTML entity characters in the answer buttons.
+- Bim Williams - For being a great sounding board for me when I faced issues with moving onto the next question in the quiz, and for helping solve the issue faced with the HTML entity characters in the answer buttons.
 
-* [Dave Horrocks](https://github.com/daveyjh) - For taking the time to walk through my code with me when I was struggling with adding event listeners.
+- [Dave Horrocks](https://github.com/daveyjh) - For taking the time to walk through my code with me when I was struggling with adding event listeners.
 
-* [Emanuel Silva](https://github.com/manni8436) - For cheering me on when I was struggling with the JavaScript, and for testing the site.
+- [Emanuel Silva](https://github.com/manni8436) - For cheering me on when I was struggling with the JavaScript, and for testing the site.
 
-* [Abi Harrison](https://github.com/Abibubble) - For being a great rubber duck and helping debug, helping to test the site and for sharing her knowledge on accessibility.
+- [Abi Harrison](https://github.com/Abibubble) - For being a great rubber duck and helping debug, helping to test the site and for sharing her knowledge on accessibility.
 
-* The Code Institute Slack channel Peer Code Review - Thank you to everyone who took the time to play the quiz and look over the code.
+- The Code Institute Slack channel Peer Code Review - Thank you to everyone who took the time to play the quiz and look over the code.
