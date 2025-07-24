@@ -170,15 +170,15 @@ The initial design and layout of this project were conceptualized using Figma. T
 Click to view the **website wireframes** [here](https://www.figma.com/design/4mJYRwrJnmsoifzWiK1tJQ/ASIN-RADAR?node-id=0-1&m=dev&t=gptwWji70jXKvfB0-1).
 
 Home Page
-![ASIN RADAR Website Main Page](assets/wireframe/homepage.png)
+![ASIN RADAR Website Main Page](assets/wireframe/homep.png)
 Pricing
-![ASIN RADAR Website Pricing](assets/wireframe/pricing.png)
+![ASIN RADAR Website Pricing](assets/wireframe/pricings.png)
 Frequently Asked Questions
-![ASIN RADAR Website FAQ](assets/wireframe/faqa.png)
+![ASIN RADAR Website FAQ](assets/wireframe/faq.png)
 Search
-![ASIN RADAR Website Search](assets/wireframe/searchpage.png)
+![ASIN RADAR Website Search](assets/wireframe/search.png)
 After Search
-![ASIN RADAR Website Application](assets/wireframe/appview.png)
+![ASIN RADAR Website Application](assets/wireframe/app.png)
 Contact Us
 ![ASIN RADAR Website Contact us](assets/wireframe/contact-us.png)
 
