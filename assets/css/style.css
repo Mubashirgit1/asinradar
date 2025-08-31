@@ -293,7 +293,7 @@ select {
 }
 
 #asinInput {
-  width: 218px;
+  width: 308px;
   margin-left: 18px;
 }
 .nav-link {
@@ -358,7 +358,7 @@ select {
   color: #bbb;
   background: none;
   letter-spacing: 1px;
-  word-spacing: 10px;
+  word-spacing: 0px;
   font-family: "Arvo", sans-serif;
   padding: 0;
   line-height: 25px;
