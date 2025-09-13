@@ -58,7 +58,10 @@ Whether you're an experienced seller or just starting out, ASIN RADAR helps you 
     - [How to Clone](#how-to-clone)
 
 - [Testing](#testing)
-
+    [Testing File] (#testing)
+  - [Manual Testing](#manual-testing)
+  - [Automate Testing](#automate-testing)
+  
 - [Credits](#credits)
   - [Code Used](#code-used)
   - [Content](#content)
@@ -512,6 +515,52 @@ To clone the repository:
 Please refer to [TESTING.md](TESTING.md) file for all testing carried out.
 
 ---
+## Automated and Manual Testing
+
+### Manual Testing
+Manual testing involves a human tester performing the steps to check functionality.  
+
+**Scenario:** Testing a Product Search
+
+1. Open the website in a browser.
+2. Access the live Amazon site and search for products based on budget and category.
+3. Locate and copy the **ASIN (Amazon Standard Identification Number)** of a selected product.
+4. Enter the ASIN in the website’s top navbar search or navigate to the Free Trial page to perform the search.
+5. If the ASIN is correct, the product details should display, including the buy box, price, category, available colors, materials, and Amazon fees.
+6. The seller can also input the product’s purchase value after the search to identify profitable products.
+7. Test with an incorrect ASIN to ensure that a “Product Not Found” message is displayed.
+8. Note that some products may not have descriptions, materials, or variations listed.
+9. Test all available product variations to ensure they display correctly.
+
+
+**Scenario:** Testing Page Links Connectivity
+
+1. Test all navigation bar links individually to ensure they lead to the correct pages.
+2. Verify all footer links are working as expected.
+3. Click and test all buttons across the site to confirm functionality.
+4. Submit the “Contact Us” form and ensure a “Thank You” message is displayed to the customer.
+5. Verify that any irrelevant or incorrect URLs redirect to the 404 page.
+6. Test search filters and remove unnecessary slashes or links to secure API endpoints.
+
+
+This is manual because a tester is performing and observing each step.
+
+### Automate Regression & Repeatable Tasks
+
+1. Automate tests for:
+
+2. Navbar & footer links.
+
+3. Search functionality (e.g., ASIN search).
+
+4. Form submissions.
+
+5. 404 page redirect.
+
+6. Product details display and variations.
+
+Re-run these tests whenever you update the project to ensure nothing breaks.
+
 
 ### Solved Bugs
 
